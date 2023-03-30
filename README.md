@@ -1,1 +1,1 @@
-# insightcore-client
+# Insightcore Client
