@@ -6,6 +6,7 @@ export default function Document (): ReactNode {
   return (
     <Html>
       <Head>
+        <title>Insightcore</title>
         {meta.map((meta, index) => (
           <meta key={index} {...meta} />
         ))}
