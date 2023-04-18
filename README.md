@@ -74,7 +74,7 @@ Com a integração de um mapa, é possível identificar os pontos críticos da p
 
 ## 🔖 Layout
 
-<h3>O Layout pode ser encontrado <a href="https://www.figma.com/file/IaskyDj6u8XQ3ZcKpEPb9p/Covid-19-Insights?node-id=0%3A1&t=Uv8AybF9PRsFfaM4-1">aqui</a></h3>
+<h3>O layout pode ser encontrado <a href="https://www.figma.com/file/HNBBtWtCcEeGDieq1IZh8x/Telas?node-id=0%3A1&t=6ZKpB1cDLLRqVztt-1">aqui</a></h3>
 
 ---
 
