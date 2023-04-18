@@ -34,13 +34,11 @@
 
 ### 🌎 Projeto
 
-Uma das maiores crises globais atualmente é a pandemia de COVID-19, que tem afetado a saúde pública e a economia de diversos países. Para enfrentar essa crise, é essencial ter dados precisos e insights relevantes para entender o histórico da pandemia e identificar tendências.
+Uma das maiores crises globais foi e ainda é a pandemia de COVID-19, que tem afetado a saúde pública e a economia de diversos países. Para enfrentar essa crise, é essencial ter dados precisos e insights relevantes para entender o histórico da pandemia e identificar tendências.
 
-Covid-19 Insights pode ser uma ferramenta valiosa para gerar esses insights e dados. Através dela, é possível visualizar a evolução dos casos de COVID-19 ao longo do tempo, bem como comparar a situação de diferentes países e regiões. Além disso, é possível identificar quais medidas foram tomadas em cada localidade e avaliar sua eficácia.
+Covid-19 Insights pode ser uma ferramenta valiosa para gerar esses insights e dados. Através dela, é possível visualizar a evolução dos casos de COVID-19 ao longo do tempo, bem como comparar a situação de cidades. Além disso, é possível identificar quais medidas foram tomadas em cada localidade e avaliar sua eficácia.
 
 Com a integração de um mapa, é possível identificar os pontos críticos da pandemia, bem como as áreas com menor incidência de casos. Isso pode ser útil para orientar as políticas públicas e alocar recursos de forma mais eficiente. Também é possível utilizar a plataforma para monitorar a taxa de vacinação em cada localidade e identificar quais grupos populacionais estão sendo atendidos.
-
-Em resumo, Covid-19 Insights é ferramenta poderosa para entender a pandemia de COVID-19 e tomar decisões informadas sobre como lidar com ela. Com dados precisos e insights relevantes, podemos enfrentar essa crise de forma mais eficiente e com maior probabilidade de sucesso.
 
 ---
 
