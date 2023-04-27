@@ -6,7 +6,8 @@
   "author": "Maurício Witter <mauriciobw17@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "build": "next build"
   },
   "config": {
     "commitizen": {
