@@ -16,8 +16,10 @@ rules: {
   indent: [error, 2],
   semi: [error, always],
   "@typescript-eslint/semi": [error, always],
-  "template-curly-spacing": [error, always],
+  "template-curly-spacing": "off",
   "react/react-in-jsx-scope": "off",
   "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
+  "@typescript-eslint/explicit-function-return-type": "off",
+  "@typescript-eslint/space-before-function-paren": "off",
   complexity: [error, 4],
 }
