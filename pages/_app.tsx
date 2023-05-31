@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { type ReactNode } from 'react';
 import '../styles/globals.css';
+import '../styles/styles.css';
 
 const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
   return (

@@ -3,10 +3,10 @@ import { type FC } from 'react';
 
 const Header: FC = () => {
   return (
-    <header className='bg-secondary w-full h-16 flex items-center justify-between px-5 md:px-8 py-1'>
+    <header className='bg-secondary text-foreground w-full h-16 flex items-center justify-between px-5 md:px-8 py-1'>
       <section className='flex items-center gap-3'>
         <Image src="/virus.svg" alt="Logo" width={42} height={42} />
-        <h1 className='text-lg font-bold'>Covid Insights</h1>
+        <h1 className='text-lg text-foreground font-bold'>Covid Insights</h1>
       </section>
       <section>
         <input

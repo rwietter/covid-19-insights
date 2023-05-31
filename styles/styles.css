@@ -1,0 +1,25 @@
+* {
+  animation-duration: 0.1ms;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+@media (min-width: 1280px) {
+  .main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+#symptoms {
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  max-width: 95%;
+}

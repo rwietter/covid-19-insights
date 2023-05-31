@@ -9,10 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#171821',
-        foreground: '#F5F5F5',
-        primary: '#171821',
-        secondary: '#21222D'
+        background: '#EBEEF2',
+        foreground: '#1F2937',
+        primary: '#EBEEF2',
+        secondary: '#FFFFFF',
+        text: '#1F2937',
+        bar: '#1DA584'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif']
