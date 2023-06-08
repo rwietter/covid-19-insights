@@ -43,6 +43,7 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
         <meta name='X-UA-Compatible' content='IE=edge' />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta name='author' content='Insightcore' />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name='keywords' content='covid, covid-19, covid19, coronavírus, pandemia, brasil, dados, informações, gráficos, gráficos interativos, gráficos animados, gráficos animados interativos, gráficos animados interativos covid-19' />
