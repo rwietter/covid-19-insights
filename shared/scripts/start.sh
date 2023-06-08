@@ -1,2 +1,0 @@
-cd /app
-yarn build
