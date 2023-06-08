@@ -2,7 +2,7 @@ import type { QueryProps } from '@/domains/dashboard/types';
 import { Dashboard } from '@/domains/dashboard';
 import { client } from '@/services/graphql/apollo';
 import { clinicalDataQuery } from '@/services/graphql/query';
-import { type GetStaticProps } from 'next';
+import { type GetServerSideProps } from 'next';
 
 type PageProps = QueryProps;
 
@@ -10,7 +10,7 @@ export default function Page(props: PageProps) {
   return <Dashboard clinicalData={props} />;
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const { data } = await client.query({
       query: clinicalDataQuery,
@@ -24,8 +24,7 @@ export const getStaticProps: GetStaticProps = async () => {
       props: {
         countPatientsSymptoms: data.countPatientsSymptoms,
         countPatients: data.countPatients,
-        countPatientsByAge: data.countPatientsByAge,
-        revalidate: 3600 // 1 hour
+        countPatientsByAge: data.countPatientsByAge
       }
     };
   } catch (error: unknown) {
