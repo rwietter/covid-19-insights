@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "bradlc.vscode-tailwindcss",
+    "apollographql.vscode-apollo",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "viablelab.bracket-padder",
+    "EditorConfig.EditorConfig",
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "mquandalle.graphql",
+    "wix.vscode-import-cost",
+    "yoavbls.pretty-ts-errors",
+    "Prisma.prisma",
+    "wicked-labs.wvsc-serendipity",
+  ]
+}
