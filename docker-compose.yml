@@ -10,3 +10,4 @@ services:
       - '.:/app'
     environment:
       - NODE_ENV=production
+      - API_URL=http://covid-insights.ddns.net:5001/graphql
