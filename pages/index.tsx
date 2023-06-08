@@ -11,30 +11,19 @@ export default function Page(props: PageProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const { data } = await client.query({
-      query: clinicalDataQuery,
-      variables: {
-        startDate: '2022-10-03T10:15:30Z',
-        endDate: '2022-12-03T10:15:30Z'
-      }
-    });
+  const { data } = await client.query({
+    query: clinicalDataQuery,
+    variables: {
+      startDate: '2022-10-03T10:15:30Z',
+      endDate: '2022-12-03T10:15:30Z'
+    }
+  });
 
-    return {
-      props: {
-        countPatientsSymptoms: data.countPatientsSymptoms,
-        countPatients: data.countPatients,
-        countPatientsByAge: data.countPatientsByAge
-      }
-    };
-  } catch (error: unknown) {
-    console.error('Error on getStaticProps', error);
-    return {
-      props: {
-        countPatientsSymptoms: [],
-        countPatients: [],
-        countPatientsByAge: []
-      }
-    };
-  }
+  return {
+    props: {
+      countPatientsSymptoms: data.countPatientsSymptoms,
+      countPatients: data.countPatients,
+      countPatientsByAge: data.countPatientsByAge
+    }
+  };
 };

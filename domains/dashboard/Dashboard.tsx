@@ -32,6 +32,7 @@ const Dashboard = ({ clinicalData }: ComponentProps) => {
   useEffect(() => {
     if (isMounted) {
       (async () => {
+        console.log(selectedDate);
         await fetch();
       })();
     }
@@ -43,6 +44,7 @@ const Dashboard = ({ clinicalData }: ComponentProps) => {
 
   // !TODO: handle error
   if (error instanceof ApolloError) {
+    console.log('ApolloError');
     console.error(error.message);
   }
 
