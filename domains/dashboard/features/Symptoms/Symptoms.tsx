@@ -39,6 +39,7 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
         width="100%"
         fallbackContent='Loading...'
         height="100%"
+        className='h-full w-full'
         data={dataset}
       />
     </div>

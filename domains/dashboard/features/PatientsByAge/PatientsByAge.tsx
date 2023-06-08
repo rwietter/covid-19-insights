@@ -45,6 +45,7 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
         width="100%"
         fallbackContent='Loading...'
         height="100%"
+        className='h-full w-full'
         data={patientsByAge}
       />
     </div>
