@@ -18,10 +18,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/domains/*": [
+        "domains/*"
+      ],
+      "@/shared/*": [
+        "shared/*"
+      ],
+      "@/services/*": [
+        "services/*"
+      ],
     }
   },
   "include": [

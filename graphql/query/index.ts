@@ -1,1 +1,0 @@
-export { syntomsQuery } from './symptoms';
