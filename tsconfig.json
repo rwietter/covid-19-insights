@@ -9,6 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "outDir": ".next",
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -18,10 +19,17 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/domains/*": [
+        "domains/*"
+      ],
+      "@/shared/*": [
+        "shared/*"
+      ],
+      "@/services/*": [
+        "services/*"
+      ],
     }
   },
   "include": [

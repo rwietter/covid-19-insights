@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
+    volumes:
+      - .:/app
+    networks:
+      - next-node
+    environment:
+      - NODE_ENV=production
+      - API_URL=http://covid-insights.ddns.net:5001/graphql
+
+networks:
+  next-node:
+    driver: bridge

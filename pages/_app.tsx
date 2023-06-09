@@ -2,6 +2,32 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import React, { type ReactNode } from 'react';
 import '../styles/globals.css';
+import '../styles/styles.css';
+
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  ArcElement,
+  Tooltip,
+  Legend
+} from 'chart.js';
+import { ApolloProvider } from '@apollo/client';
+import { client } from '@/services/graphql/apollo';
+
+ChartJS.defaults.scale.grid.display = false;
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
 
 const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
   return (
@@ -21,7 +47,9 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <meta name='keywords' content='covid, covid-19, covid19, coronavírus, pandemia, brasil, dados, informações, gráficos, gráficos interativos, gráficos animados, gráficos animados interativos, gráficos animados interativos covid-19' />
       </Head>
-      <Component {...pageProps} />
+      <ApolloProvider client={client}>
+        <Component {...pageProps} />
+      </ApolloProvider>
     </>
   );
 };

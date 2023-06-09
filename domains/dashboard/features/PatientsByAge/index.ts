@@ -1,0 +1,1 @@
+export { PatientsByAge } from './PatientsByAge';
