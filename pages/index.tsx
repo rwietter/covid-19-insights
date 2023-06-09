@@ -19,9 +19,6 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
     }
   });
 
-  console.log('data', data);
-  console.log('error', error);
-
   if (error != null) {
     return {
       notFound: true
@@ -33,6 +30,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
       countPatientsSymptoms: data.countPatientsSymptoms,
       countPatients: data.countPatients,
       countPatientsByAge: data.countPatientsByAge
-    }
+    },
+    revalidate: 3600 // 1 hour
   };
 };

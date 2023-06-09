@@ -21,8 +21,4 @@ const useSelectDate = () => {
   return { selectedDate, onChangeDate };
 };
 
-// fetchData({ variables: { startDate: startIsoDate, endDate: endIsoDate } })
-//   .then((res) => { console.log(res); })
-//   .catch((err) => { console.log(err); });
-
 export { useSelectDate };
