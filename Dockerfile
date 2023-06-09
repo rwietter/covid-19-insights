@@ -1,12 +1,12 @@
-FROM node:19
+FROM node:18-alpine3.17
 
-WORKDIR /app
+WORKDIR /
 
-COPY . .
+COPY package.json /
 
 RUN yarn install --production
 
-RUN yarn add next
+COPY . /
 
 RUN yarn build
 

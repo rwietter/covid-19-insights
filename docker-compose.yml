@@ -9,12 +9,11 @@ services:
     volumes:
       - .:/app
     networks:
-      - node-mongo
+      - next-node
     environment:
       - NODE_ENV=production
       - API_URL=http://covid-insights.ddns.net:5001/graphql
 
 networks:
-  node-mongo:
-    external:
-      name: node-mongo
+  next-node:
+    driver: bridge
