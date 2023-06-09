@@ -1,13 +1,20 @@
-version: '3'
+version: '3.8'
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '3000:3000'
+      - 3001:3001
     volumes:
-      - '.:/app'
+      - .:/app
+    networks:
+      - node-mongo
     environment:
       - NODE_ENV=production
-      - API_URL=http://localhost:5001/graphql
+      - API_URL=http://covid-insights.ddns.net:5001/graphql
+
+networks:
+  node-mongo:
+    external:
+      name: node-mongo
