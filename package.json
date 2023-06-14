@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start -p 3001",
-    "build": "next build"
+    "build": "next build",
+    "cy:test": "cypress open"
   },
   "config": {
     "commitizen": {
@@ -21,9 +22,11 @@
     "@types/react": "18.0.31",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "commitizen": "^4.3.0",
+    "cypress": "^12.14.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.37.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
