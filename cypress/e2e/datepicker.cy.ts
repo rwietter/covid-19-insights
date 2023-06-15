@@ -1,4 +1,3 @@
-/* eslint-disable cypress/no-unnecessary-waiting */
 /* eslint-disable cypress/unsafe-to-chain-command */
 describe('Navigation', () => {
   it('Should ', () => {
@@ -19,8 +18,6 @@ describe('Navigation', () => {
     cy.get('table > tbody > tr:nth-child(2) > td:nth-child(1) div.ant-picker-cell-inner')
       .contains(7)
       .click();
-
-    cy.wait(20000);
 
     cy.get('main > section > div:nth-child(2) > h2').should('have.text', '108.885');
   });
