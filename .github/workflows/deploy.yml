@@ -26,5 +26,4 @@ jobs:
             cd Covid-19-insights/covid-19-insights
             git fetch
             git merge origin/main
-            docker-compose up --build -d
-            EOF
+            docker compose up --build -d
