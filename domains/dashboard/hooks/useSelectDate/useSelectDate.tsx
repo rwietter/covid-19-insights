@@ -1,5 +1,6 @@
 import type { Dayjs } from 'dayjs';
 import { useSlectedDateStore } from '@/domains/dashboard/store/useSlectedDateStore';
+import { PANDEMIC_START_DATE, LAST_DATABASE_UPDATE } from '@/domains/dashboard/constants';
 
 type EventValue<DateType> = DateType | null;
 type RangeValue<DateType> = [EventValue<DateType>, EventValue<DateType>] | null;
@@ -21,11 +22,8 @@ const useSelectDate = () => {
   };
 
   const disabledDate = (current: Dayjs) => {
-    const pandemicStartDate = '2020-03-11';
-    const beforeLastDatabaseUpdate = '2024-01-01';
-
-    const disableBeforePandemic = current.isBefore(pandemicStartDate);
-    const disableAfterToday = current.isAfter(beforeLastDatabaseUpdate);
+    const disableBeforePandemic = current.isBefore(PANDEMIC_START_DATE);
+    const disableAfterToday = current.isAfter(LAST_DATABASE_UPDATE);
 
     if (disableBeforePandemic || disableAfterToday) {
       return true;
