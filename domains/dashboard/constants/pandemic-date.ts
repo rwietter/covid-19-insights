@@ -1,0 +1,2 @@
+export const PANDEMIC_START_DATE = '2020-03-11';
+export const LAST_DATABASE_UPDATE = '2024-01-01';
