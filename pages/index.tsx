@@ -24,7 +24,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
       query: clinicalDataQuery,
       variables: {
         startDate: '2022-01-01T10:00:00Z',
-        endDate: '2022-12-31T10:00:00Z'
+        endDate: '2022-01-02T10:00:00Z'
       }
     });
 

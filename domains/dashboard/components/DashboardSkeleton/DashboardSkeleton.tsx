@@ -20,7 +20,7 @@ const GridItem = () => (
 const DashboardSkeleton = () => (
   <div className={'bg-background overflow-hidden w-screen min-h-screen text-foreground font-sans'}>
     <Header />
-    <main className='px-2 md:px-12 m-auto'>
+    <main className='px-2 md:px-12 m-auto pt-28'>
       <Banner />
       <section className='w-full grid md:grid-cols-3 gap-6 lg:gap-25 xl:gap-32 px-5 pt-6'>
         <Card />
