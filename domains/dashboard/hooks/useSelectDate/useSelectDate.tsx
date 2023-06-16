@@ -6,6 +6,7 @@ type RangeValue<DateType> = [EventValue<DateType>, EventValue<DateType>] | null;
 
 const useSelectDate = () => {
   const { setSelectedDate, selectedDate } = useSlectedDateStore();
+
   const onChangeDate = (date: RangeValue<Dayjs>) => {
     if (date != null) {
       const [startDate, endDate] = date.map((item) => item);
@@ -18,7 +19,21 @@ const useSelectDate = () => {
       }
     }
   };
-  return { selectedDate, onChangeDate };
+
+  const disabledDate = (current: Dayjs) => {
+    const pandemicStartDate = '2020-03-11';
+    const beforeLastDatabaseUpdate = '2024-01-01';
+
+    const disableBeforePandemic = current.isBefore(pandemicStartDate);
+    const disableAfterToday = current.isAfter(beforeLastDatabaseUpdate);
+
+    if (disableBeforePandemic || disableAfterToday) {
+      return true;
+    }
+
+    return false;
+  };
+  return { selectedDate, onChangeDate, disabledDate };
 };
 
 export { useSelectDate };
