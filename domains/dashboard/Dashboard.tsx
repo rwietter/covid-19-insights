@@ -54,7 +54,7 @@ const Dashboard = ({ clinicalData }: ComponentProps) => {
       className={`bg-background overflow-hidden w-screen min-h-screen text-foreground font-sans ${inter.className}`}
     >
       <Header />
-      <main className='px-2 md:px-12 m-auto'>
+      <main className='px-2 md:px-12 m-auto pt-16'>
         <Banner />
         <Cards countPatients={dataset?.countPatients} />
 
