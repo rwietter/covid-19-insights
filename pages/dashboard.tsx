@@ -12,19 +12,13 @@ export default function Page(props: PageProps) {
 
 export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsResult<QueryProps>> => {
   try {
-    const { data, error } = await client.query({
+    const { data } = await client.query({
       query: clinicalDataQuery,
       variables: {
         startDate: '2022-01-01T10:00:00Z',
         endDate: '2022-03-30T10:00:00Z'
       }
     });
-
-    if (error != null) {
-      return {
-        notFound: true
-      };
-    }
 
     return {
       props: {
