@@ -11,14 +11,6 @@ export default function Page(props: PageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsResult<QueryProps>> => {
-  const notFound = {
-    redirect: {
-      destination: '/404',
-      permanent: false
-    },
-    revalidate: 400 // 6 minutes
-  };
-
   try {
     const { data, error } = await client.query({
       query: clinicalDataQuery,
@@ -28,7 +20,11 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
       }
     });
 
-    if (error != null) return { ...notFound };
+    if (error != null) {
+      return {
+        notFound: true
+      };
+    }
 
     return {
       props: {
@@ -39,6 +35,8 @@ export const getStaticProps: GetStaticProps = async (): Promise<GetStaticPropsRe
       revalidate: 3600 // 1 hour
     };
   } catch (error) {
-    return { ...notFound };
+    return {
+      notFound: true
+    };
   }
 };
