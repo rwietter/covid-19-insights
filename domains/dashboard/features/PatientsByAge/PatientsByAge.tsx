@@ -2,6 +2,7 @@ import { type FC } from 'react';
 import { Bar } from 'react-chartjs-2';
 import type { PatientByAge } from '@/domains/dashboard/types';
 import { options } from './options';
+import { Chart } from '@/domains/dashboard/components';
 
 interface IPatientsByAge {
   readonly countPatientsByAge: PatientByAge[]
@@ -30,16 +31,19 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
       {
         label: 'Idades',
         data: sortedCountValues,
-        backgroundColor: ['#1DA584'],
+        backgroundColor: [
+          'rgba(255, 159, 64, 0.6)'
+        ],
         hoverOffset: 6
       }
     ]
   };
 
   return (
-    <div className="w-full bg-secondary max-h-[500px] p-4 pb-20 shadow-lg rounded-lg">
-      <h1 className='text-foreground font-sans font-semibold text-lg text-center'>Idades dos pacientes</h1>
-      <p className='text-slate-700 font-sans font-light text-sm text-center'>Idades mais comuns entre pacientes diagnosticados com COVID-19</p>
+    <Chart
+      title='Idades dos pacientes'
+      subtitle='Idades mais comuns entre pacientes diagnosticados com COVID-19'
+    >
       <Bar
         options={options}
         width="100%"
@@ -48,7 +52,7 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
         className='h-full w-full'
         data={patientsByAge}
       />
-    </div>
+    </Chart>
   );
 };
 

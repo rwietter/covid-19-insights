@@ -11,12 +11,24 @@ export const options = {
       fullSize: true,
       position: 'top' as const,
       labels: {
-        color: 'text-slate-900',
+        color: 'text-foreground',
         padding: 15,
         font: {
-          size: 12,
-          family: 'Inter'
+          size: 15,
+          weight: '500',
+          family: 'Quicksand, sans-serif'
         }
+      }
+    },
+    tooltip: {
+      titleFont: {
+        family: 'Quicksand, sans-serif',
+        size: 14
+      },
+      bodyFont: {
+        family: 'Quicksand, sans-serif',
+        size: 14,
+        weight: '500'
       }
     }
   }
