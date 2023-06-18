@@ -8,6 +8,9 @@ services:
       - 3001:3001
     volumes:
       - .:/app
+    env_file:
+      - .env
+    restart: always
     networks:
       - next-node
     environment:

@@ -1,17 +1,31 @@
-FROM node:18-alpine3.17
+# Build Application
+FROM node:alpine AS builder
+ENV NODE_ENV=production
 
-WORKDIR /
+WORKDIR /app
 
-COPY package.json /
+COPY package.json package-lock.json ./
 
-RUN yarn install --production
+RUN npm install --omit=dev
 
-COPY . /
+COPY . .
 
-RUN yarn build
+RUN npm run build
 
-ENV NODE_ENV production
+# Build Image
+FROM node:alpine
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+
+RUN npm install --omit=dev
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+
+ENV API_URL=http://covid-insights.ddns.net:5001/graphql
 
 EXPOSE 3001
 
-CMD [ "yarn", "start" ]
+CMD ["npm", "run", "start"]
