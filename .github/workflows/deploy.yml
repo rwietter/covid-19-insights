@@ -22,8 +22,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
             whoami
-            ls -lha
-            cd Covid-19-insights/covid-19-insights
+            cd storage/Covid-insights/covid-19-insights
             git fetch
-            git merge origin/main
+            git rebase origin/main
             docker compose up --build -d
