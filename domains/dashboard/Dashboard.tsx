@@ -4,14 +4,11 @@ import { useSelectDate } from './hooks/useSelectDate';
 import { ApolloError, useLazyQuery } from '@apollo/client';
 
 import { Banner, DashboardSkeleton } from '@/domains/dashboard/components';
-import { Cards, Header, PatientsByAge, Symptoms } from '@/domains/dashboard/features';
+import { Cards, Header, PatientsByAge, Sidebar, Symptoms } from '@/domains/dashboard/features';
 
 import { clinicalDataQuery } from '@/services/graphql/query';
-import { Inter } from 'next/font/google';
 
 import type { QueryProps } from '@/domains/dashboard/types';
-
-const inter = Inter({ subsets: ['latin'] });
 
 interface ComponentProps {
   clinicalData: QueryProps
@@ -31,9 +28,9 @@ const Dashboard = ({ clinicalData }: ComponentProps) => {
   // fetch data when the component is mounted && when the date is changed
   useEffect(() => {
     if (isMounted) {
-      (async () => {
+      void (async function () {
         await fetch();
-      })();
+      }());
     }
     setIsMounted(true);
     return () => { setIsMounted(false); };
@@ -51,10 +48,11 @@ const Dashboard = ({ clinicalData }: ComponentProps) => {
 
   return (
     <div
-      className={`bg-background overflow-hidden w-screen min-h-screen text-foreground font-sans ${inter.className}`}
+      className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'
     >
       <Header />
-      <main className='px-2 md:px-12 m-auto pt-28'>
+      <Sidebar />
+      <main className='px-2 md:px-12 m-auto ml-16 mt-16 bg-background rounded-tl-3xl'>
         <Banner />
         <Cards countPatients={dataset?.countPatients} />
 

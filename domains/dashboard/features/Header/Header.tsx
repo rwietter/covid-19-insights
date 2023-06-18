@@ -8,7 +8,7 @@ import { PANDEMIC_START_DATE } from '../../constants';
 const Header = () => {
   const { onChangeDate, disabledDate } = useSelectDate();
   return (
-    <header className='bg-secondary bg-opacity-80 fixed border-b border-slate-300 backdrop-blur-sm text-foreground z-50 w-full h-16 flex items-center justify-center sm:justify-between px-5 md:px-8 py-1'>
+    <header className='bg-primary bg-opacity-80 fixed backdrop-blur-sm text-foreground z-50 w-full h-16 flex items-center justify-center sm:justify-between px-5 md:px-8 py-1'>
       <section className='items-center gap-3 hidden sm:flex'>
         <Image src="/virus.svg" alt="Logo" width={30} height={30} />
         <h1 className='text-slate-800 font-sans font-semibold'>Covid Insights</h1>
@@ -26,7 +26,7 @@ const Header = () => {
           picker="date"
           placement='bottomRight'
           renderExtraFooter={() => (
-            <p className='text-center text-slate-700'>Selecione um intervalo de tempo</p>
+            <p className='text-center text-foreground'>Selecione um intervalo de tempo</p>
           )}
         />
       </section>

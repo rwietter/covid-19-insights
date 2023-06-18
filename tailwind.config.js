@@ -9,15 +9,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: '#EBEEF2',
-        foreground: '#1F2937',
-        primary: '#EBEEF2',
-        secondary: '#FFFFFF',
+        background: '#FFFFFF',
+        foreground: '#221C55',
+        foregroundLight: '#513ED9',
+        primary: '#F5F7FB',
+        secondary: '#F8FAFB',
         text: '#1F2937',
         bar: '#1DA584'
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Quicksand', 'sans-serif']
       }
     }
   },
