@@ -1,0 +1,1 @@
+export { ClinicalTests } from './ClinicalTests';

@@ -1,4 +1,4 @@
 export interface PatientsSymptoms {
   labels: string[]
-  values: number[]
+  values: Array<string | number>
 }

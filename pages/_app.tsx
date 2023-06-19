@@ -13,7 +13,10 @@ import {
   Title,
   ArcElement,
   Tooltip,
-  Legend
+  Legend,
+  RadialLinearScale,
+  PointElement,
+  LineElement
 } from 'chart.js';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '@/services/graphql/apollo';
@@ -27,7 +30,10 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
-  ArcElement
+  ArcElement,
+  RadialLinearScale,
+  PointElement,
+  LineElement
 );
 
 const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {

@@ -34,7 +34,35 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
   return (
     <Chart title='Sintomas de Covid-19' subtitle='Sintomas mais comuns entre os pacientes'>
       <Pie
-        options={options}
+        options={{
+          ...options,
+          plugins: {
+            legend: {
+              fullSize: true,
+              position: 'top' as const,
+              labels: {
+                color: '#222222',
+                padding: 15,
+                font: {
+                  size: 15,
+                  weight: '600',
+                  family: 'Quicksand, sans-serif'
+                }
+              }
+            },
+            tooltip: {
+              titleFont: {
+                family: 'Quicksand, sans-serif',
+                size: 14
+              },
+              bodyFont: {
+                family: 'Quicksand, sans-serif',
+                size: 14,
+                weight: '600'
+              }
+            }
+          }
+        }}
         width="100%"
         fallbackContent='Loading...'
         height="100%"

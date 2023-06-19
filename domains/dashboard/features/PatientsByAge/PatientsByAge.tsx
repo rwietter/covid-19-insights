@@ -45,7 +45,35 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
       subtitle='Idades mais comuns entre pacientes diagnosticados com COVID-19'
     >
       <Bar
-        options={options}
+        options={{
+          ...options,
+          plugins: {
+            legend: {
+              fullSize: true,
+              position: 'top' as const,
+              labels: {
+                padding: 15,
+                color: '#222222',
+                font: {
+                  size: 15,
+                  weight: '600',
+                  family: 'Quicksand, sans-serif'
+                }
+              }
+            },
+            tooltip: {
+              titleFont: {
+                family: 'Quicksand, sans-serif',
+                size: 14
+              },
+              bodyFont: {
+                family: 'Quicksand, sans-serif',
+                size: 14,
+                weight: '500'
+              }
+            }
+          }
+        }}
         width="100%"
         fallbackContent='Loading...'
         height="100%"

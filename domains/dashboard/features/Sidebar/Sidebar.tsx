@@ -18,11 +18,13 @@ const Sidebar = () => {
   };
 
   return (
-    <aside className='bg-primary bg-opacity-80 fixed left-0 h-screen w-16 z-0 flex items-center justify-center flex-col'>
+    <aside
+      className='bg-primary bg-opacity-80 fixed w-full h-16 bottom-0 md:h-screen md:w-16 md:left-0 z-0 flex items-center justify-center md:flex-col'
+    >
       <Link href="/" className={isLinkActive('/')}>
         <BiHomeAlt size={23} color={isColorActive('/')} />
       </Link>
-      <Link href="/dashboard" className={`my-8 ${isLinkActive('/dashboard')}`}>
+      <Link href="/dashboard" className={`mx-8 md:my-8 ${isLinkActive('/dashboard')}`}>
         <RiPieChartLine size={23} color={isColorActive('/dashboard')} />
       </Link>
       <Link href="/download" type="button" className={isLinkActive('/download')}>
