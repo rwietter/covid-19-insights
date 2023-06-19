@@ -10,7 +10,7 @@ type Props = PropsWithChildren<ChartProps>;
 const Chart: FC<Props> = (props) => {
   return (
     <div
-      className={`bg-background max-h-[500px] p-6 pb-20 w-full aspect-auto ${props.className ?? ''}`}
+      className={`bg-background max-h-[550px] px-1 md:p-6 pb-20 w-full aspect-auto ${props.className ?? ''}`}
     >
       <h1
         className='text-foreground font-sans font-semibold text-lg text-center'

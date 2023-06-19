@@ -3,6 +3,7 @@ import { Pie } from 'react-chartjs-2';
 import { type PatientsSymptoms } from '@/domains/dashboard/types';
 import { options } from './options';
 import { Chart } from '@/domains/dashboard/components';
+import { calculatePercentages } from '../../lib';
 
 interface ComponentProps {
   countPatientsSymptoms: PatientsSymptoms
@@ -11,6 +12,8 @@ interface ComponentProps {
 const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
   const [, ...labels] = Object.keys(countPatientsSymptoms);
   const [, ...values] = Object.values(countPatientsSymptoms);
+
+  const percentages = calculatePercentages(values);
 
   const dataset = {
     labels: labels.map((label: string) => label[0].toUpperCase() + label.slice(1)),
@@ -51,6 +54,17 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
               }
             },
             tooltip: {
+              callbacks: {
+                label: (context) => {
+                  const dataset = context.dataset;
+                  const index = context.dataIndex;
+                  const value = dataset.data[index];
+                  const percentage = percentages[index];
+                  return context.label === 'Outros'
+                    ? `${context.label}: ${value} (${percentage}%)`
+                    : `Sintomas de ${context.label}: ${value} (${percentage}%)`;
+                }
+              },
               titleFont: {
                 family: 'Quicksand, sans-serif',
                 size: 14

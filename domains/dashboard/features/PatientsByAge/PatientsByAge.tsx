@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 import type { PatientByAge } from '@/domains/dashboard/types';
 import { options } from './options';
 import { Chart } from '@/domains/dashboard/components';
+import { calculatePercentages } from '@/domains/dashboard/lib';
 
 interface IPatientsByAge {
   readonly countPatientsByAge: PatientByAge[]
@@ -24,6 +25,8 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
 
   const sortedAgeLabels = sortedDataChart.map(item => item.age);
   const sortedCountValues = sortedDataChart.map(item => item.count);
+
+  const percentages = calculatePercentages(sortedCountValues);
 
   const patientsByAge = {
     labels: sortedAgeLabels,
@@ -62,6 +65,15 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
               }
             },
             tooltip: {
+              callbacks: {
+                label: (context) => {
+                  const dataset = context.dataset;
+                  const index = context.dataIndex;
+                  const value = dataset.data[index] as number;
+                  const percentage = percentages[index];
+                  return `Idades entre ${context.label} anos: ${value} (${percentage}%)`;
+                }
+              },
               titleFont: {
                 family: 'Quicksand, sans-serif',
                 size: 14

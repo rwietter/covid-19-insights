@@ -18,10 +18,10 @@ const GridItem = () => (
 );
 
 const DashboardSkeleton = () => (
-  <div className='bg-background overflow-hidden w-screen min-h-screen text-foreground font-sans'>
+  <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
     <Header />
     <Sidebar />
-    <main className='px-2 md:px-12 m-auto ml-16 mt-16 bg-background rounded-tl-3xl'>
+    <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
       <Banner />
       <section className='w-full grid md:grid-cols-3 gap-6 lg:gap-25 xl:gap-32 px-5 pt-10'>
         <Card />
@@ -30,7 +30,7 @@ const DashboardSkeleton = () => (
       </section>
 
       <section
-        className='w-full h-full grid xl:grid-cols-2 grid-flow-row py-8 gap-x-4 gap-y-14 max-w-full px-5 place-items-center'
+        className='w-full h-full grid xl:grid-cols-2 grid-flow-row py-8 gap-x-4 gap-y-14 max-w-full md:px-5 place-items-center'
       >
         <GridItem />
         <GridItem />

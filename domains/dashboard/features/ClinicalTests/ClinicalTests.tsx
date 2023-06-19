@@ -3,15 +3,11 @@ import { Doughnut } from 'react-chartjs-2';
 import { options, colors } from './options';
 import { Chart } from '@/domains/dashboard/components';
 import { type PatientsByDiagnosisCriteria } from '@/domains/dashboard/types';
+import { calculatePercentages } from '@/domains/dashboard/lib';
 
 interface ComponentProps {
   countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[]
 }
-
-const calculatePercentages = (data: PatientsByDiagnosisCriteria[]) => {
-  const total = data?.reduce((acc, value) => acc + value.count, 0);
-  return data?.map((value) => ((value.count / total) * 100).toFixed(2));
-};
 
 const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria }) => {
   if (countPatientsByDiagnosisCriteria.length <= 0) return null;
@@ -21,7 +17,9 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
     count: item.count
   }));
 
-  const percentages = calculatePercentages(data);
+  const percentages = calculatePercentages(
+    data.map(({ count }) => count)
+  );
 
   const dataset = {
     labels: data.map(({ criteria }) => criteria[0].toUpperCase() + criteria.slice(1).toLowerCase()),

@@ -1,0 +1,1 @@
+export { calculatePercentages } from './calculatePercentages';
