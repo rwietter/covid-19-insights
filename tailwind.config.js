@@ -12,6 +12,7 @@ module.exports = {
         background: '#FFFFFF',
         foreground: '#221C55',
         foregroundLight: '#513ED9',
+        foregroundExtraLight: '#7F66FF',
         primary: '#F5F7FB',
         secondary: '#F8FAFB',
         text: '#1F2937',
