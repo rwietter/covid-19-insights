@@ -4,13 +4,13 @@ import { TfiDownload } from 'react-icons/tfi';
 import { BiHomeAlt } from 'react-icons/bi';
 import { useRouter } from 'next/router';
 
-const linkStyle = 'bg-foregroundLight rounded-full p-2 shadow-md shadow-gray-400';
+const linkStyle = 'bg-foregroundLight rounded-full p-3 hover:bg-foregroundExtraLight transition duration-300 ease-in';
 
 const Sidebar = () => {
   const { asPath } = useRouter();
 
   const isColorActive = (path: string) => {
-    return asPath === path ? '#ffff' : '#C1CAD8';
+    return asPath === path ? '#ffff' : '#999999';
   };
 
   const isLinkActive = (path: string) => {
@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   return (
     <aside
-      className='bg-primary bg-opacity-80 fixed w-full h-16 bottom-0 md:h-screen md:w-16 md:left-0 z-0 flex items-center justify-center md:flex-col'
+      className='bg-primary bg-opacity-80 fixed w-full h-16 bottom-0 md:h-screen md:w-16 md:left-0 z-0 flex items-center justify-center md:flex-col backdrop-blur-sm'
     >
       <Link href="/" className={isLinkActive('/')}>
         <BiHomeAlt size={23} color={isColorActive('/')} />
