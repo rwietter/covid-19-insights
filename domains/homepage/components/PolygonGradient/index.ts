@@ -1,0 +1,1 @@
+export { PolygonGradient } from './PolygonGradient';
