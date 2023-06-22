@@ -4,25 +4,25 @@ export const options = {
   scales: {
     y: {
       grid: {
-        display: true
+        display: true,
       },
       ticks: {
         font: {
           size: 14,
           family: 'Quicksand, sans-serif',
-          weight: '500'
+          weight: '500',
         },
-        count: 6
-      }
+        count: 6,
+      },
     },
     x: {
       ticks: {
         font: {
           size: 14,
           family: 'Quicksand, sans-serif',
-          weight: '500'
-        }
-      }
-    }
-  }
+          weight: '500',
+        },
+      },
+    },
+  },
 };

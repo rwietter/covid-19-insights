@@ -4,17 +4,17 @@ export const options = {
   borderWidth: 0,
   animation: {
     animateScale: true,
-    animateRotate: true
+    animateRotate: true,
   },
   indexAxis: 'y' as const,
   scales: {
     x: {
-      display: false
+      display: false,
     },
     y: {
-      display: false
-    }
-  }
+      display: false,
+    },
+  },
 };
 
 export const colors = [
@@ -25,5 +25,5 @@ export const colors = [
   'rgba(196, 167, 231, 1)',
   'rgba(101, 98, 168, 1)',
   'rgba(34, 111, 104, 1)',
-  'rgba(253, 164, 127, 1)'
+  'rgba(253, 164, 127, 1)',
 ];

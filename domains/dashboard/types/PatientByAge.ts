@@ -1,4 +1,4 @@
 export interface PatientByAge {
-  age: string
-  count: number
+  age: string;
+  count: number;
 }

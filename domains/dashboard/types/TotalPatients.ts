@@ -1,3 +1,3 @@
 export interface TotalPatients {
-  countPatients: number
+  countPatients: number;
 }

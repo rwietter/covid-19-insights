@@ -1,17 +1,24 @@
 import { useEffect, useState } from 'react';
 import { useSelectDate } from '../useSelectDate';
-import { useLazyQuery } from '@apollo/client';
+import { type ApolloError, useLazyQuery } from '@apollo/client';
 import { clinicalDataQuery } from '@/services/graphql/query';
+import { type QueryProps } from '@/domains/dashboard/types/QueryProps';
 
-const useFetchDataset = () => {
+interface UseFetchDatasetReturn {
+  data: QueryProps | undefined;
+  loading: boolean;
+  error: ApolloError | undefined;
+}
+
+const useFetchDataset = (): UseFetchDatasetReturn => {
   const [isMounted, setIsMounted] = useState(false);
   const { selectedDate } = useSelectDate();
 
-  const [fetch, { data, loading, error }] = useLazyQuery(clinicalDataQuery, {
+  const [fetch, { data, loading, error }] = useLazyQuery<QueryProps>(clinicalDataQuery, {
     variables: {
       startDate: selectedDate?.startDate,
-      endDate: selectedDate?.endDate
-    }
+      endDate: selectedDate?.endDate,
+    },
   });
 
   // fetch data when the component is mounted && when the date is changed
@@ -19,10 +26,12 @@ const useFetchDataset = () => {
     if (isMounted) {
       void (async function () {
         await fetch();
-      }());
+      })();
     }
     setIsMounted(true);
-    return () => { setIsMounted(false); };
+    return () => {
+      setIsMounted(false);
+    };
   }, [selectedDate]);
 
   return { data, loading, error };

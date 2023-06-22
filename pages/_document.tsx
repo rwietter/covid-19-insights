@@ -5,9 +5,15 @@ export default function Document(): ReactNode {
   return (
     <Html>
       <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='anonymous' />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap'
+          rel='stylesheet'
+        />
+        <link rel='preconnect' href='https://rsms.me/' />
+        <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
+        <script src='particles.js'></script>
       </Head>
       <body>
         <Main />

@@ -1,1 +1,57 @@
+:root {
+  --gradientColorZero: #a960ee;
+  --gradientColorOne: #ff333d;
+  --gradientColorTwo: #90e0ff;
+  --gradientColorThree: #ffcb57;
+  --gradientColorZeroTransparent: rgba(169, 96, 238, 0);
+  --gradientColorOneTransparent: rgba(255, 51, 61, 0);
+  --gradientColorTwoTransparent: rgba(144, 224, 255, 0);
+  --gradientColorThreeTransparent: rgba(255, 203, 87, 0);
+}
 
+#title-blend {
+  color: #343434;
+  top: 0;
+  left: 0;
+  font-weight: 800;
+  user-select: none;
+  letter-spacing: -.06em;
+  -webkit-font-smoothing: antialiased;
+  mix-blend-mode: color-burn;
+  font-feature-settings: ss01 on, ss02 on, ss03 on, rlig on, calt on, dlig on
+}
+
+#subtitle-blend {
+  mix-blend-mode: color-burn;
+  letter-spacing: -.06em;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: ss01 on, ss02 on, ss03 on, rlig on, calt on, dlig on
+}
+
+#main-homepage::after {
+  position: absolute;
+  content: " ";
+  background: radial-gradient(var(--gradientColorZero) 10%, var(--gradientColorTwoTransparent) 60%) -420px -180px no-repeat, radial-gradient(var(--gradientColorThree) 23%, var(--gradientColorThreeTransparent) 70%) 240px -24px no-repeat, radial-gradient(var(--gradientColorTwo) 30%, var(--gradientColorTwoTransparent) 70%) -270px 220px no-repeat, var(--gradientColorZero);
+  height: 80%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 75%);
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

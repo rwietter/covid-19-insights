@@ -4,6 +4,6 @@ export const options = {
   borderWidth: 0,
   animation: {
     animateScale: true,
-    animateRotate: true
-  }
+    animateRotate: true,
+  },
 };

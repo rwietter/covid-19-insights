@@ -6,7 +6,7 @@ import { Chart } from '@/domains/dashboard/components';
 import { calculatePercentages } from '../../lib';
 
 interface ComponentProps {
-  countPatientsSymptoms: PatientsSymptoms
+  countPatientsSymptoms: PatientsSymptoms;
 }
 
 const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
@@ -27,11 +27,11 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
           'rgba(246, 193, 119, 0.6)',
           'rgba(156, 207, 216, 0.6)',
           'rgba(49, 116, 143, 0.6)',
-          'rgba(196, 167, 231, 0.6)'
+          'rgba(196, 167, 231, 0.6)',
         ],
-        hoverOffset: 6
-      }
-    ]
+        hoverOffset: 6,
+      },
+    ],
   };
 
   return (
@@ -49,9 +49,9 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
                 font: {
                   size: 15,
                   weight: '600',
-                  family: 'Quicksand, sans-serif'
-                }
-              }
+                  family: 'Quicksand, sans-serif',
+                },
+              },
             },
             tooltip: {
               callbacks: {
@@ -63,23 +63,23 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
                   return context.label === 'Outros'
                     ? `${context.label}: ${value} (${percentage}%)`
                     : `Sintomas de ${context.label}: ${value} (${percentage}%)`;
-                }
+                },
               },
               titleFont: {
                 family: 'Quicksand, sans-serif',
-                size: 14
+                size: 14,
               },
               bodyFont: {
                 family: 'Quicksand, sans-serif',
                 size: 14,
-                weight: '600'
-              }
-            }
-          }
+                weight: '600',
+              },
+            },
+          },
         }}
-        width="100%"
+        width='100%'
         fallbackContent='Loading...'
-        height="100%"
+        height='100%'
         className='h-full w-full p-2'
         data={dataset}
       />

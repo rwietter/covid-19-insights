@@ -6,10 +6,10 @@ import { Chart } from '@/domains/dashboard/components';
 import { calculatePercentages } from '@/domains/dashboard/lib';
 
 interface IPatientsByAge {
-  readonly countPatientsByAge: PatientByAge[]
+  readonly countPatientsByAge: PatientByAge[];
 }
 
-const orderByAge = ({ countPatientsByAge }: IPatientsByAge) => {
+const orderByAge = ({ countPatientsByAge }: IPatientsByAge): PatientByAge[] => {
   return [...countPatientsByAge].sort((a, b) => {
     const ageA = parseInt(a.age.split(' ')[0]);
     const ageB = parseInt(b.age.split(' ')[0]);
@@ -19,12 +19,13 @@ const orderByAge = ({ countPatientsByAge }: IPatientsByAge) => {
 };
 
 const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
+  // eslint-disable-next-line no-extra-boolean-cast
   if (!Boolean(countPatientsByAge)) return null;
 
   const sortedDataChart = orderByAge({ countPatientsByAge });
 
-  const sortedAgeLabels = sortedDataChart.map(item => item.age);
-  const sortedCountValues = sortedDataChart.map(item => item.count);
+  const sortedAgeLabels = sortedDataChart.map((item) => item.age);
+  const sortedCountValues = sortedDataChart.map((item) => item.count);
 
   const percentages = calculatePercentages(sortedCountValues);
 
@@ -34,12 +35,10 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
       {
         label: 'Idades',
         data: sortedCountValues,
-        backgroundColor: [
-          'rgba(255, 159, 64, 0.6)'
-        ],
-        hoverOffset: 6
-      }
-    ]
+        backgroundColor: ['rgba(255, 159, 64, 0.6)'],
+        hoverOffset: 6,
+      },
+    ],
   };
 
   return (
@@ -60,9 +59,9 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
                 font: {
                   size: 15,
                   weight: '600',
-                  family: 'Quicksand, sans-serif'
-                }
-              }
+                  family: 'Quicksand, sans-serif',
+                },
+              },
             },
             tooltip: {
               callbacks: {
@@ -72,23 +71,23 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
                   const value = dataset.data[index] as number;
                   const percentage = percentages[index];
                   return `Idades entre ${context.label} anos: ${value} (${percentage}%)`;
-                }
+                },
               },
               titleFont: {
                 family: 'Quicksand, sans-serif',
-                size: 14
+                size: 14,
               },
               bodyFont: {
                 family: 'Quicksand, sans-serif',
                 size: 14,
-                weight: '500'
-              }
-            }
-          }
+                weight: '500',
+              },
+            },
+          },
         }}
-        width="100%"
+        width='100%'
         fallbackContent='Loading...'
-        height="100%"
+        height='100%'
         className='h-full w-full'
         data={patientsByAge}
       />

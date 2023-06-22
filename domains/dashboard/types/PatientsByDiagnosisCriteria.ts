@@ -1,4 +1,4 @@
 export interface PatientsByDiagnosisCriteria {
-  criteria: string
-  count: number
+  criteria: string;
+  count: number;
 }
