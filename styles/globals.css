@@ -35,3 +35,16 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
 }
+
+:root {
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: 'Inter var', sans-serif;
+  }
+  :is(h1, h2, h3, h4, h5, h6, p, span, a, label) {
+    font-feature-settings: "ss01" on, "ss02" on, "ss03" on, "rlig" on, "calt" on;
+  }
+}

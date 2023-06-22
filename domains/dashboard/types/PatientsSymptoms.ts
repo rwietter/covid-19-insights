@@ -1,4 +1,4 @@
 export interface PatientsSymptoms {
-  labels: string[]
-  values: number[]
+  labels: string[];
+  values: number[];
 }

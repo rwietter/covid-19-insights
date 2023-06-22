@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './domains/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}'
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -16,12 +16,15 @@ module.exports = {
         primary: '#F5F7FB',
         secondary: '#F8FAFB',
         text: '#1F2937',
-        bar: '#1DA584'
+        bar: '#1DA584',
       },
       fontFamily: {
-        sans: ['Quicksand', 'sans-serif']
-      }
-    }
+        sans: ['Quicksand', 'sans-serif'],
+        secondary: ['Inter var', 'Quicksand'],
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
+
+module.exports = config;

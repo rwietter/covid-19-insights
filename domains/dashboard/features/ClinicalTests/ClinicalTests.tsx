@@ -6,7 +6,7 @@ import { type PatientsByDiagnosisCriteria } from '@/domains/dashboard/types';
 import { calculatePercentages } from '@/domains/dashboard/lib';
 
 interface ComponentProps {
-  countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[]
+  countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[];
 }
 
 const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria }) => {
@@ -14,12 +14,10 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
 
   const data = countPatientsByDiagnosisCriteria.map((item) => ({
     criteria: item.criteria,
-    count: item.count
+    count: item.count,
   }));
 
-  const percentages = calculatePercentages(
-    data.map(({ count }) => count)
-  );
+  const percentages = calculatePercentages(data.map(({ count }) => count));
 
   const dataset = {
     labels: data.map(({ criteria }) => criteria[0].toUpperCase() + criteria.slice(1).toLowerCase()),
@@ -29,13 +27,16 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
         data: data.map(({ count }) => count),
         backgroundColor: colors,
         hoverOffset: 6,
-        borderWidth: 2
-      }
-    ]
+        borderWidth: 2,
+      },
+    ],
   };
 
   return (
-    <Chart title='Diagnósticos por testes' subtitle='Testes mais utilizados para diagnóstico de Covid-19'>
+    <Chart
+      title='Diagnósticos por testes'
+      subtitle='Testes mais utilizados para diagnóstico de Covid-19'
+    >
       <Doughnut
         options={{
           ...options,
@@ -48,10 +49,10 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
                 font: {
                   family: 'Quicksand, sans-serif',
                   size: 14,
-                  weight: 'bold'
+                  weight: 'bold',
                 },
-                color: '#222222'
-              }
+                color: '#222222',
+              },
             },
             tooltip: {
               callbacks: {
@@ -61,23 +62,23 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
                   const value = dataset.data[index];
                   const percentage = percentages[index];
                   return `Número de Testes: ${value} (${percentage}%)`;
-                }
+                },
               },
               titleFont: {
                 family: 'Quicksand, sans-serif',
-                size: 14
+                size: 14,
               },
               bodyFont: {
                 family: 'Quicksand, sans-serif',
                 size: 14,
-                weight: '500'
-              }
-            }
-          }
+                weight: '500',
+              },
+            },
+          },
         }}
-        width="100%"
+        width='100%'
         fallbackContent='Loading...'
-        height="100%"
+        height='100%'
         className='h-full w-full p-2'
         data={dataset}
       />

@@ -5,14 +5,23 @@ import { PANDEMIC_START_DATE, LAST_DATABASE_UPDATE } from '@/domains/dashboard/c
 type EventValue<DateType> = DateType | null;
 type RangeValue<DateType> = [EventValue<DateType>, EventValue<DateType>] | null;
 
-const useSelectDate = () => {
+interface UseSelectDateReturnType {
+  selectedDate: {
+    startDate: string;
+    endDate: string;
+  };
+  onChangeDate: (date: RangeValue<Dayjs>) => void;
+  disabledDate: (current: Dayjs) => boolean;
+}
+
+const useSelectDate = (): UseSelectDateReturnType => {
   const { setSelectedDate, selectedDate } = useSlectedDateStore();
 
-  const onChangeDate = (date: RangeValue<Dayjs>) => {
+  const onChangeDate = (date: RangeValue<Dayjs>): void => {
     if (date != null) {
       const [startDate, endDate] = date.map((item) => item);
 
-      if ((startDate != null) && (endDate != null)) {
+      if (startDate != null && endDate != null) {
         const startIsoDate = startDate.toISOString();
         const endIsoDate = endDate.toISOString();
 
@@ -21,7 +30,7 @@ const useSelectDate = () => {
     }
   };
 
-  const disabledDate = (current: Dayjs) => {
+  const disabledDate = (current: Dayjs): boolean => {
     const disableBeforePandemic = current.isBefore(PANDEMIC_START_DATE);
     const disableAfterToday = current.isAfter(LAST_DATABASE_UPDATE);
 
