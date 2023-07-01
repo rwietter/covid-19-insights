@@ -33,6 +33,7 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
         <Cards
           countPatients={dataset?.countPatients}
           countDeadPatients={dataset?.countDeadPatients.count}
+          averageDeadPatientAge={dataset?.averageDeadPatientAge?.avg}
         />
 
         <section className='w-full h-full grid xl:grid-cols-2 grid-flow-row py-8 gap-x-4 gap-y-24 max-w-full md:px-5 place-items-center pb-24'>

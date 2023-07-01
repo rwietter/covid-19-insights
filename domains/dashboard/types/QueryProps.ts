@@ -15,4 +15,7 @@ export interface QueryProps {
     count: number;
     year: number;
   }>;
+  averageDeadPatientAge: {
+    avg: number;
+  };
 }

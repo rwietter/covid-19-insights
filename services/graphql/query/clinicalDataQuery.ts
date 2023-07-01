@@ -36,5 +36,8 @@ export const clinicalDataQuery = gql`
       year
       count
     }
+    averageDeadPatientAge(filters: { startDate: $startDate, endDate: $endDate }) {
+      avg
+    }
   }
 `;
