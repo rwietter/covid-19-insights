@@ -21,6 +21,7 @@ import {
 } from 'chart.js';
 import { ApolloProvider } from '@apollo/client';
 import { client } from '@/services/graphql/apollo';
+import { LoadingIndicator } from '@/shared/components/LoadingIndicator';
 
 ChartJS.defaults.scale.grid.display = false;
 
@@ -64,6 +65,7 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
           content='covid, covid-19, covid19, coronavírus, pandemia, brasil, dados, informações, gráficos, gráficos interativos, gráficos animados, gráficos animados interativos, gráficos animados interativos covid-19'
         />
       </Head>
+      <LoadingIndicator />
       <ApolloProvider client={client}>
         <Component {...pageProps} />
       </ApolloProvider>

@@ -13,6 +13,8 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
   const [, ...labels] = Object.keys(countPatientsSymptoms);
   const [, ...values] = Object.values(countPatientsSymptoms);
 
+  if (values.every((count) => count <= 0)) return null;
+
   const percentages = calculatePercentages(values);
 
   const dataset = {

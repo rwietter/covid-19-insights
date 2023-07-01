@@ -20,7 +20,7 @@ const orderByAge = ({ countPatientsByAge }: IPatientsByAge): PatientByAge[] => {
 
 const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
   // eslint-disable-next-line no-extra-boolean-cast
-  if (!Boolean(countPatientsByAge)) return null;
+  if (countPatientsByAge.length <= 0) return null;
 
   const sortedDataChart = orderByAge({ countPatientsByAge });
 

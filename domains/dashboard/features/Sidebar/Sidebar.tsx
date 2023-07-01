@@ -20,7 +20,7 @@ const Sidebar = (): ReactNode => {
   };
 
   return (
-    <aside className='bg-primary bg-opacity-80 fixed w-full h-16 bottom-0 md:h-screen md:w-16 md:left-0 z-0 flex items-center justify-center md:flex-col backdrop-blur-sm'>
+    <aside className='bg-primary bg-opacity-80 fixed z-10 w-full h-16 bottom-0 md:h-screen md:w-16 md:left-0 z-0 flex items-center justify-center md:flex-col backdrop-blur-sm'>
       <Link href='/' className={isLinkActive('/')}>
         <BiHomeAlt size={23} color={isColorActive('/')} />
       </Link>
