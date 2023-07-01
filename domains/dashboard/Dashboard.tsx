@@ -19,7 +19,7 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
     return <h1>Erro ao carregar dados</h1>;
   }
 
-  if (loading) return <DashboardSkeleton />;
+  if (loading) return <p className='text-zinc-950 text-center'>Carregando...</p>;
 
   const dataset = typeof data !== 'undefined' ? data : clinicalData;
 
@@ -29,7 +29,10 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
       <Sidebar />
       <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
         <Banner />
-        <Cards countPatients={dataset?.countPatients} />
+        <Cards
+          countPatients={dataset?.countPatients}
+          countDeadPatients={dataset?.countDeadPatients.count}
+        />
 
         <section className='w-full h-full grid xl:grid-cols-2 grid-flow-row py-8 gap-x-4 gap-y-24 max-w-full md:px-5 place-items-center pb-24'>
           <Symptoms countPatientsSymptoms={dataset?.countPatientsSymptoms} />

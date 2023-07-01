@@ -2,9 +2,9 @@ import { gql } from '@apollo/client';
 
 export const clinicalDataQuery = gql`
   query Symptoms($startDate: DateTime, $endDate: DateTime) {
-    countPatients(filters: {startDate: $startDate, endDate: $endDate})
+    countPatients(filters: { startDate: $startDate, endDate: $endDate })
 
-    countPatientsSymptoms(filters: {startDate: $startDate, endDate: $endDate}) {
+    countPatientsSymptoms(filters: { startDate: $startDate, endDate: $endDate }) {
       febre
       garganta
       tosse
@@ -12,18 +12,22 @@ export const clinicalDataQuery = gql`
       outros
     }
 
-    countPatientsByAge(filters: { startDate: $startDate, endDate: $endDate}) {
+    countPatientsByAge(filters: { startDate: $startDate, endDate: $endDate }) {
       age
       count
     }
 
-    countPatientsByRecoveryStatus(filters: {startDate: $startDate, endDate: $endDate}) {
+    countPatientsByRecoveryStatus(filters: { startDate: $startDate, endDate: $endDate }) {
       status
       count
     }
 
-    countPatientsByDiagnosisCriteria(filters: {startDate: $startDate, endDate: $endDate}) {
+    countPatientsByDiagnosisCriteria(filters: { startDate: $startDate, endDate: $endDate }) {
       criteria
+      count
+    }
+
+    countDeadPatients(filters: { startDate: $startDate, endDate: $endDate }) {
       count
     }
   }

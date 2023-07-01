@@ -1,6 +1,7 @@
 import type { Dayjs } from 'dayjs';
 import { useSlectedDateStore } from '@/domains/dashboard/store/useSlectedDateStore';
 import { PANDEMIC_START_DATE, LAST_DATABASE_UPDATE } from '@/domains/dashboard/constants';
+import dayjs from 'dayjs';
 
 type EventValue<DateType> = DateType | null;
 type RangeValue<DateType> = [EventValue<DateType>, EventValue<DateType>] | null;
@@ -22,8 +23,8 @@ const useSelectDate = (): UseSelectDateReturnType => {
       const [startDate, endDate] = date.map((item) => item);
 
       if (startDate != null && endDate != null) {
-        const startIsoDate = startDate.toISOString();
-        const endIsoDate = endDate.toISOString();
+        const startIsoDate = dayjs(startDate).startOf('day').toISOString();
+        const endIsoDate = dayjs(endDate).startOf('day').toISOString();
 
         setSelectedDate(startIsoDate, endIsoDate);
       }
