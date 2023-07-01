@@ -5,7 +5,7 @@ export const options = {
     y: {
       display: true,
       title: {
-        text: 'Casos confirmados',
+        text: 'Mortes',
         display: true,
         padding: 15,
         font: {
@@ -29,7 +29,7 @@ export const options = {
     x: {
       display: true,
       title: {
-        text: 'Faixa etária',
+        text: 'Mês',
         display: true,
         padding: 15,
         font: {

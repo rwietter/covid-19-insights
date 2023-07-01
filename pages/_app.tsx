@@ -17,6 +17,7 @@ import {
   Legend,
   RadialLinearScale,
   PointElement,
+  Filler,
   LineElement,
 } from 'chart.js';
 import { ApolloProvider } from '@apollo/client';
@@ -28,6 +29,7 @@ ChartJS.defaults.scale.grid.display = false;
 ChartJS.register(
   CategoryScale,
   LinearScale,
+  Filler,
   BarElement,
   Title,
   Tooltip,

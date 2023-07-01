@@ -1,0 +1,1 @@
+export { DeadGroupedByMonth } from './DeadGroupedByMonth';

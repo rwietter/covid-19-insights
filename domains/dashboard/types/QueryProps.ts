@@ -10,4 +10,9 @@ export interface QueryProps {
   countDeadPatients: {
     count: number;
   };
+  countDeadPatientsGroupedByMonth: Array<{
+    month: number;
+    count: number;
+    year: number;
+  }>;
 }
