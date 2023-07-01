@@ -36,8 +36,6 @@ const DashboardSkeleton = (): ReactNode => (
       <section className='w-full h-full grid xl:grid-cols-2 grid-flow-row py-8 gap-x-4 gap-y-14 max-w-full md:px-5 place-items-center'>
         <GridItem />
         <GridItem />
-        <GridItem />
-        <GridItem />
       </section>
     </main>
   </div>

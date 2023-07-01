@@ -19,7 +19,7 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
     return <h1>Erro ao carregar dados</h1>;
   }
 
-  if (loading) return <p className='text-zinc-950 text-center'>Carregando...</p>;
+  if (loading) return <DashboardSkeleton />;
 
   const dataset = typeof data !== 'undefined' ? data : clinicalData;
 
@@ -27,7 +27,7 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
     <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
       <Header />
       <Sidebar />
-      <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
+      <main className='px-2 md:px-12 m-auto md:ml-16 min-h-[calc(100vh-4rem)] mt-16 bg-background rounded-tl-3xl'>
         <Banner />
         <Cards
           countPatients={dataset?.countPatients}
