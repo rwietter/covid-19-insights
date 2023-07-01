@@ -24,7 +24,7 @@ const useSelectDate = (): UseSelectDateReturnType => {
 
       if (startDate != null && endDate != null) {
         const startIsoDate = dayjs(startDate).startOf('day').toISOString();
-        const endIsoDate = dayjs(endDate).startOf('day').toISOString();
+        const endIsoDate = dayjs(endDate).endOf('day').toISOString();
 
         setSelectedDate(startIsoDate, endIsoDate);
       }

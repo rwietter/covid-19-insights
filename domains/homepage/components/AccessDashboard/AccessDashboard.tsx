@@ -25,12 +25,16 @@ const AccessDashboard = (): ReactNode => {
         Tenha uma visão detalhada sobre a pandemia do covid-19 no RS.
       </p>
 
-      <button
-        type='button'
-        className='border-2 border-foreground text-foreground font-semibold text-xl px-8 py-3 rounded-lg mt-10 hover:text-white hover:bg-foreground transition-all relative z-10 shadow-2xl active:opacity-50'
+      <Link
+        className='border-2 border-foreground text-foreground font-semibold text-xl px-8 py-3 rounded-lg mt-10 hover:text-white text-center hover:bg-foreground transition-all relative z-10 shadow-2xl active:opacity-50'
+        href='/dashboard'
+        role='button'
+        aria-label='Acessar Dashboard'
+        prefetch={true}
+        property='button'
       >
-        <Link href='/dashboard'>Acessar Dashboard</Link>
-      </button>
+        Acessar Dashboard
+      </Link>
     </>
   );
 };

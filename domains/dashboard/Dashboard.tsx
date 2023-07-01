@@ -7,6 +7,7 @@ import type { QueryProps } from '@/domains/dashboard/types';
 import { ClinicalTests } from '@/domains/dashboard/features/ClinicalTests';
 import { useFetchDataset } from '@/domains/dashboard/hooks/useFetchDataset';
 import { type ReactNode } from 'react';
+import { DeadGroupedByMonth } from './features/DeadGroupedByMonth';
 
 interface ComponentProps {
   clinicalData: QueryProps | undefined;
@@ -40,6 +41,7 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
           <ClinicalTests
             countPatientsByDiagnosisCriteria={dataset?.countPatientsByDiagnosisCriteria}
           />
+          <DeadGroupedByMonth deadGroupedByMonth={dataset?.countDeadPatientsGroupedByMonth} />
         </section>
       </main>
     </div>
