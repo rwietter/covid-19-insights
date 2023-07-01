@@ -19,6 +19,8 @@ const useFetchDataset = (): UseFetchDatasetReturn => {
       startDate: selectedDate?.startDate,
       endDate: selectedDate?.endDate,
     },
+    fetchPolicy: 'cache-and-network',
+    nextFetchPolicy: 'cache-first',
   });
 
   // fetch data when the component is mounted && when the date is changed

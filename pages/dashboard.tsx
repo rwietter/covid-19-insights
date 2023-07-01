@@ -41,6 +41,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
           countPatients: data.countPatients,
           countPatientsByAge: data.countPatientsByAge,
           countPatientsByDiagnosisCriteria: data.countPatientsByDiagnosisCriteria,
+          countDeadPatients: data.countDeadPatients,
         },
       },
       revalidate: 3600, // 1 hour

@@ -2,8 +2,6 @@ import { DatePicker } from 'antd';
 import Image from 'next/image';
 import { useSelectDate } from '@/domains/dashboard/hooks/useSelectDate';
 import locale from 'antd/lib/date-picker/locale/pt_BR';
-import dayjs from 'dayjs';
-import { PANDEMIC_START_DATE } from '@/domains/dashboard/constants';
 import { type ReactNode } from 'react';
 
 const Header = (): ReactNode => {
@@ -25,7 +23,6 @@ const Header = (): ReactNode => {
           locale={locale}
           allowClear={false}
           style={{ width: '100%' }}
-          defaultPickerValue={[dayjs(PANDEMIC_START_DATE), dayjs()]}
           picker='date'
           placement='bottomRight'
           renderExtraFooter={() => (

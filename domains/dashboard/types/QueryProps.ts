@@ -7,4 +7,7 @@ export interface QueryProps {
   countPatients: number;
   countPatientsByAge: PatientByAge[];
   countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[];
+  countDeadPatients: {
+    count: number;
+  };
 }
