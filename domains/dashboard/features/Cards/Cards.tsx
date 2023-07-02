@@ -53,7 +53,7 @@ const Cards: FC<CardProps> = ({
         <div className='absolute rounded-sm bg-slate-700 border-green-400 left-[-3px] top-6 h-9 w-[.35rem]'></div>
         <h1 className='text-xl font-normal uppercase font-sans text-foreground'>Letalidade</h1>
         <h2 className='text-xl text-foreground font-semibold'>
-          {fatalityRate} %{' '}
+          {fatalityRate}%{' '}
           <span className='text-sm text-slate-500 font-light'>taxa de fatalidade</span>
         </h2>
       </div>

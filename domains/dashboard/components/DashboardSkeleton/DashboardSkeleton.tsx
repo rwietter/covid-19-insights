@@ -30,7 +30,7 @@ const DashboardSkeleton = (): ReactNode => (
     <Sidebar />
     <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
       <Banner />
-      <section className='w-full grid md:grid-cols-3 gap-6 lg:gap-25 xl:gap-32 px-5 pt-10'>
+      <section className='w-full grid xl:grid-cols-4 gap-3 lg:gap-5 xl:gap-5 px-5 pt-10'>
         <Card />
         <Card />
         <Card />
