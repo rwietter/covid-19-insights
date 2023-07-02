@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm install --omit=dev
+RUN npm install --omit=dev --force
 
 COPY . .
 
@@ -19,7 +19,7 @@ WORKDIR /production
 
 COPY package.json package-lock.json ./
 
-RUN npm install --omit=dev
+RUN npm install --omit=dev --force
 
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
