@@ -1,8 +1,8 @@
-import React, { type FC, type ReactElement } from 'react';
+import { type FC, type ReactElement } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart } from '../../components';
+import { Chart } from '@/domains/dashboard/components';
+import { calculatePercentages } from '@/domains/dashboard/lib';
 import { options } from './options';
-import { calculatePercentages } from '../../lib';
 
 const labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
