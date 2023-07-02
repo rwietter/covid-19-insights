@@ -1,11 +1,11 @@
-import Image from 'next/image';
+import { Drops } from '@/shared/components/Drops';
 import Link from 'next/link';
 import { type ReactNode } from 'react';
 
 const Page404 = (): ReactNode => {
   return (
-    <div className='relative w-full h-screen overflow-hidden'>
-      <div className='flex flex-col justify-center absolute z-10 w-full h-full items-start p-10 lg:p-72 bg-white'>
+    <div className='relative w-full h-screen overflow-hidden bg-white'>
+      <section className='flex flex-col z-20 absolute justify-center w-full h-full items-start p-10 lg:p-72 '>
         <h1 className='text-9xl font-bold text-slate-600'>
           40
           <span className='rotate-3 text-9xl'>4</span>
@@ -23,22 +23,9 @@ const Page404 = (): ReactNode => {
         >
           Voltar para a página inicial
         </Link>
-      </div>
-      <div className='w-full h-full flex justify-between p-96 relative'>
-        <Image
-          src='/use292.svg'
-          alt='404'
-          className='absolute z-30 left-0 top-0'
-          width={400}
-          height={400}
-        />
-        <Image
-          src='/use308.svg'
-          alt='404'
-          className='absolute z-30 right-0 bottom-0'
-          width={400}
-          height={400}
-        />
+      </section>
+      <div className='w-full h-full flex justify-between absolute z-10'>
+        <Drops />
       </div>
     </div>
   );
