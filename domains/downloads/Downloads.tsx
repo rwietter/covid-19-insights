@@ -6,7 +6,9 @@ import { DownloadCard } from '@/domains/downloads/components';
 const Downloads = (): ReactNode => {
   return (
     <main>
-      <Header />
+      <Header.Root>
+        <Header.Icon />
+      </Header.Root>
       <Sidebar />
       <div className='bg-white relative w-full min-h-screen overflow-hidden flex flex-col justify-center items-center text-slate-700 rounded-tl-3xl'>
         <section className='p-4 py-8 relative z-10'>
