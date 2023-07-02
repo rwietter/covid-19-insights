@@ -1,19 +1,25 @@
+import { type FC, type ReactNode } from 'react';
 import { ApolloError } from '@apollo/client';
+import { useFetchDataset } from '@/domains/dashboard/hooks';
 
 import { Banner, DashboardSkeleton } from '@/domains/dashboard/components';
-import { Cards, Header, PatientsByAge, Sidebar, Symptoms } from '@/domains/dashboard/features';
+import {
+  Cards,
+  PatientsByAge,
+  Symptoms,
+  DeadGroupedByMonth,
+  ClinicalTests,
+} from '@/domains/dashboard/features';
 
 import type { QueryProps } from '@/domains/dashboard/types';
-import { ClinicalTests } from '@/domains/dashboard/features/ClinicalTests';
-import { useFetchDataset } from '@/domains/dashboard/hooks/useFetchDataset';
-import { type ReactNode } from 'react';
-import { DeadGroupedByMonth } from './features/DeadGroupedByMonth';
+import { Sidebar } from '@/shared/components/Sidebar';
+import { Header } from '@/shared/components/Header';
 
-interface ComponentProps {
+interface Props {
   clinicalData: QueryProps | undefined;
 }
 
-const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
+const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
   const { loading, data, error } = useFetchDataset();
 
   if (typeof clinicalData === 'undefined' || error instanceof ApolloError) {
@@ -26,13 +32,16 @@ const Dashboard = ({ clinicalData }: ComponentProps): ReactNode => {
 
   return (
     <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
-      <Header />
+      <Header.Root>
+        <Header.Icon />
+        <Header.DatePicker />
+      </Header.Root>
       <Sidebar />
       <main className='px-2 md:px-12 m-auto md:ml-16 min-h-[calc(100vh-4rem)] mt-16 bg-background rounded-tl-3xl'>
         <Banner />
         <Cards
           countPatients={dataset?.countPatients}
-          countDeadPatients={dataset?.countDeadPatients.count}
+          countDeadPatients={dataset?.countDeadPatients?.count}
           averageDeadPatientAge={dataset?.averageDeadPatientAge?.avg}
         />
 

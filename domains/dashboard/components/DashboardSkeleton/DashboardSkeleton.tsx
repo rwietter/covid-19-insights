@@ -1,5 +1,6 @@
-import { Header, Sidebar } from '@/domains/dashboard/features';
 import { Banner } from '@/domains/dashboard/components';
+import { Header } from '@/shared/components/Header';
+import { Sidebar } from '@/shared/components/Sidebar';
 import { type ReactNode } from 'react';
 
 const Card = (): ReactNode => (
@@ -23,11 +24,13 @@ const GridItem = (): ReactNode => (
 
 const DashboardSkeleton = (): ReactNode => (
   <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
-    <Header />
+    <Header.Root>
+      <Header.Icon />
+    </Header.Root>
     <Sidebar />
     <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
       <Banner />
-      <section className='w-full grid md:grid-cols-3 gap-6 lg:gap-25 xl:gap-32 px-5 pt-10'>
+      <section className='w-full grid xl:grid-cols-4 gap-3 lg:gap-5 xl:gap-5 px-5 pt-10'>
         <Card />
         <Card />
         <Card />
