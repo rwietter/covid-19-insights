@@ -1,6 +1,5 @@
 import { Banner } from '@/domains/dashboard/components';
-import { Header } from '@/shared/components/Header';
-import { Sidebar } from '@/shared/components/Sidebar';
+import { Header, Sidebar } from '@/shared/components';
 import { type ReactNode } from 'react';
 
 const Card = (): ReactNode => (
@@ -12,13 +11,10 @@ const Card = (): ReactNode => (
 );
 
 const GridItem = (): ReactNode => (
-  <div
-    role='status'
-    className='w-full animate-pulse bg-secondary max-h-[500px] p-4 pb-20 shadow-lg rounded-lg'
-  >
-    <div className='h-5 rounded-full m-auto bg-gray-300 max-w-[360px]' />
-    <div className='h-5 rounded-full mt-4 m-auto bg-gray-300 max-w-[440px]' />
-    <div className='h-96 mt-4 rounded-lg bg-gray-300 m-auto w-full max-w-2xl' />
+  <div role='status' className='w-full p-4 pb-20 rounded-lg'>
+    <div className='h-5 rounded-full animate-pulse m-auto bg-gray-200 max-w-[360px]' />
+    <div className='h-5 rounded-full animate-pulse mt-4 m-auto bg-gray-200 max-w-[440px]' />
+    <div className='h-96 mt-4 rounded-lg animate-pulse bg-gray-200 m-auto w-full max-w-2xl' />
   </div>
 );
 
@@ -29,7 +25,7 @@ const DashboardSkeleton = (): ReactNode => (
     </Header.Root>
     <Sidebar />
     <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>
-      <Banner />
+      <Banner.Root />
       <section className='w-full grid xl:grid-cols-4 gap-3 lg:gap-5 xl:gap-5 px-5 pt-10'>
         <Card />
         <Card />

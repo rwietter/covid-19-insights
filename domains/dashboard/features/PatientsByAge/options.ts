@@ -7,7 +7,6 @@ export const options = {
       title: {
         text: 'Casos confirmados',
         display: true,
-        padding: 15,
         font: {
           size: 16,
           family: 'Quicksand, sans-serif',
@@ -31,7 +30,6 @@ export const options = {
       title: {
         text: 'Faixa etária',
         display: true,
-        padding: 15,
         font: {
           size: 16,
           family: 'Quicksand, sans-serif',

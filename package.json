@@ -47,6 +47,7 @@
     "autoprefixer": "10.4.14",
     "chart.js": "^4.3.0",
     "graphql": "^16.6.0",
+    "html2canvas": "^1.4.1",
     "next": "^13.4.5",
     "postcss": "8.4.24",
     "react": "^18.2.0",
@@ -56,6 +57,7 @@
     "react-topbar-progress-indicator": "^4.1.1",
     "recharts": "^2.7.0",
     "tailwindcss": "3.3.2",
+    "use-react-screenshot": "^3.0.0",
     "zustand": "^4.3.8"
   }
 }

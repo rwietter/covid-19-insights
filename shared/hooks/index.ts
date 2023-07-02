@@ -1,0 +1,1 @@
+export { useScreenshot } from './useScreenshot';
