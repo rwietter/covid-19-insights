@@ -7,11 +7,12 @@ const LoadingIndicator = (): ReactNode => {
 
   LoaderRouterIndicator.config({
     barColors: {
-      0: '#ffbe0b',
-      1.0: '#fb5607',
+      0: '#DA22FF',
+      1.0: '#00dbde',
     },
     barThickness: 4,
-    shadowBlur: 0,
+    shadowBlur: 2,
+    shadowColor: 'rgba(0, 0, 0, .7)',
   });
 
   Router.events.on('routeChangeStart', () => {
