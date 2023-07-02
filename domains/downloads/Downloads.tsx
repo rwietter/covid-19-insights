@@ -1,7 +1,8 @@
 import { type ReactNode } from 'react';
-import { Header, Sidebar } from '../dashboard/features';
 import { Drops } from '@/shared/components/Drops';
 import { DownloadCard } from '@/domains/downloads/components';
+import { Header } from '@/shared/components/Header';
+import { Sidebar } from '@/shared/components/Sidebar';
 
 const Downloads = (): ReactNode => {
   return (

@@ -5,15 +5,15 @@ import { useFetchDataset } from '@/domains/dashboard/hooks';
 import { Banner, DashboardSkeleton } from '@/domains/dashboard/components';
 import {
   Cards,
-  Header,
   PatientsByAge,
-  Sidebar,
   Symptoms,
   DeadGroupedByMonth,
   ClinicalTests,
 } from '@/domains/dashboard/features';
 
 import type { QueryProps } from '@/domains/dashboard/types';
+import { Sidebar } from '@/shared/components/Sidebar';
+import { Header } from '@/shared/components/Header';
 
 interface Props {
   clinicalData: QueryProps | undefined;
