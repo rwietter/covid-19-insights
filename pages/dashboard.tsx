@@ -46,7 +46,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
           averageDeadPatientAge: data.averageDeadPatientAge,
         },
       },
-      revalidate: 3600, // 1 hour
+      revalidate: 300, // 5 minutes
     };
   } catch (error) {
     return {
