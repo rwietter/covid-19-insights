@@ -45,6 +45,7 @@ const PatientsByAge: FC<IPatientsByAge> = ({ countPatientsByAge }) => {
     <Chart
       title='Idades dos pacientes'
       subtitle='Idades mais comuns entre pacientes diagnosticados com COVID-19'
+      description='O gráfico mostra as idades mais comuns entre os pacientes diagnosticados com COVID-19. Você pode passar o mouse sobre os dados para ver o número de pacientes. Entre eles: 0-1 meses, 1-04 anos, 05-09 anos, 10-14 anos, 15-19 anos, 20-29 anos, 30-39 anos, 40-49 anos, 50-59 anos, 60-69 anos, 70-79 anos e 80+ anos.'
     >
       <Bar
         options={{

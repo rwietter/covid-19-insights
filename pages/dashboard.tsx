@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
       query: clinicalDataQuery,
       variables: {
         startDate: '2022-01-01T10:00:00Z',
-        endDate: '2022-03-30T10:00:00Z',
+        endDate: '2022-12-31T10:00:00Z',
       },
     });
 
@@ -50,7 +50,9 @@ export const getStaticProps: GetStaticProps = async (): Promise<
     };
   } catch (error) {
     return {
-      notFound: true,
+      props: {
+        data: undefined,
+      },
     };
   }
 };

@@ -4,6 +4,7 @@ import { options, colors } from './options';
 import { Chart } from '@/domains/dashboard/components';
 import { type PatientsByDiagnosisCriteria } from '@/domains/dashboard/types';
 import { calculatePercentages } from '@/domains/dashboard/lib';
+import { data } from 'autoprefixer';
 
 interface ComponentProps {
   countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[];
@@ -36,6 +37,7 @@ const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria })
     <Chart
       title='Diagnósticos por testes'
       subtitle='Testes mais utilizados para diagnóstico de Covid-19'
+      description='Os gráfico mostra os tipos de testes mais utilizados para diagnóstico de Covid-19. Você pode passar o mouse sobre os dados para ver o número de testes realizados. Entre eles: Teste Clínico, Teste Epidemiolígico, Teste Cliníco-Imagem, Teste Rápido e RT-PCR.'
     >
       <Doughnut
         options={{

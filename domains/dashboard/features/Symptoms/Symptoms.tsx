@@ -37,7 +37,11 @@ const Symptoms: FC<ComponentProps> = ({ countPatientsSymptoms }) => {
   };
 
   return (
-    <Chart title='Sintomas de Covid-19' subtitle='Sintomas mais comuns entre os pacientes'>
+    <Chart
+      title='Sintomas de Covid-19'
+      subtitle='Sintomas mais comuns entre os pacientes'
+      description='Os gráfico mostra os sintomas mais comuns entre os pacientes. Você pode passar o mouse sobre os dados para ver o número de pacientes que apresentaram cada sintoma. Entre eles: Febre, Tosse, Dor de Garganta, Dispneia e outros sintomas.'
+    >
       <Pie
         options={{
           ...options,

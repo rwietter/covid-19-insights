@@ -17,10 +17,10 @@ const Banner: FC<Props> = (props): ReactNode => {
           Covid
           <strong className='text-slate-800'>&nbsp;Insights</strong>.
         </h1>
-        <span className='pt-2 block text-slate-500 font-semibold w-full max-w-fit'>
+        <p className='pt-2 block text-slate-500 font-semibold w-full max-w-fit'>
           Pesquisa entre <strong className='text-slate-950'>{startDate}</strong> e{' '}
           <strong className='text-slate-950'>{endDate}</strong>
-        </span>
+        </p>
       </section>
       {props.children}
     </section>

@@ -1,8 +1,10 @@
+import { Tooltip } from 'antd';
 import type { FC, HTMLAttributes, PropsWithChildren } from 'react';
 
 interface ChartProps extends HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle: string;
+  description?: string;
 }
 
 type Props = PropsWithChildren<ChartProps>;
@@ -15,7 +17,11 @@ const Chart: FC<Props> = (props) => {
       }`}
     >
       <h1 className='text-foreground font-sans font-semibold text-lg text-center'>{props.title}</h1>
-      <p className='text-foreground font-sans font-light text-lg text-center'>{props.subtitle}</p>
+      <p className='text-foreground font-sans font-light text-lg text-center'>
+        <Tooltip title={props.description} id={props.title} className='w-full'>
+          <span>{props.subtitle}</span>
+        </Tooltip>
+      </p>
       {props.children}
     </div>
   );

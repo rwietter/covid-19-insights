@@ -34,7 +34,11 @@ const DeadGroupedByMonth: FC<Props> = ({ deadGroupedByMonth }): ReactElement | n
   const percentages = calculatePercentages(deadGroupedByMonth.map((item) => item.count));
 
   return (
-    <Chart title='Óbitos por mês' subtitle='Óbitos que ocorreram por mês'>
+    <Chart
+      title='Óbitos por mês'
+      subtitle='Óbitos que ocorreram por mês'
+      description='O gráfico mostra o número de óbitos que ocorreram por mês. Você pode passar o mouse sobre os dados para ver o número de óbitos. Entre eles: Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro e Dezembro.'
+    >
       <Line
         options={{
           ...options,
