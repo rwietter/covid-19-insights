@@ -35,9 +35,10 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
     <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
       <Header.Root>
         <Header.Icon />
-        <div className='flex max-w-sm'>
+        <div className='flex max-w-lg'>
           <Header.City />
           <Header.DatePicker />
+          <Header.Reset />
         </div>
       </Header.Root>
       <Sidebar />
