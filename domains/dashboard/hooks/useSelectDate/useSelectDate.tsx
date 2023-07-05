@@ -2,6 +2,7 @@ import type { Dayjs } from 'dayjs';
 import { useSlectedDateStore } from '@/domains/dashboard/store/useSlectedDateStore';
 import { PANDEMIC_START_DATE, LAST_DATABASE_UPDATE } from '@/domains/dashboard/constants';
 import dayjs from 'dayjs';
+import { useSelectCityStore } from '@/domains/dashboard/store';
 
 type EventValue<DateType> = DateType | null;
 type RangeValue<DateType> = [EventValue<DateType>, EventValue<DateType>] | null;
@@ -11,6 +12,7 @@ interface UseSelectDateReturnType {
     startDate: string;
     endDate: string;
   };
+
   onChangeDate: (date: RangeValue<Dayjs>) => void;
   disabledDate: (current: Dayjs) => boolean;
 }

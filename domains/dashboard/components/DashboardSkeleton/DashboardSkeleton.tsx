@@ -22,6 +22,10 @@ const DashboardSkeleton = (): ReactNode => (
   <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
     <Header.Root>
       <Header.Icon />
+      <div className='flex max-w-sm'>
+        <Header.City />
+        <Header.DatePicker />
+      </div>
     </Header.Root>
     <Sidebar />
     <main className='px-2 md:px-12 m-auto md:ml-16 mt-16 bg-background rounded-tl-3xl'>

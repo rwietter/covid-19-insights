@@ -5,6 +5,7 @@ import locale from 'antd/lib/date-picker/locale/pt_BR';
 
 const DatePicker = (): ReactNode => {
   const { onChangeDate, disabledDate } = useSelectDate();
+
   return (
     <section>
       <DatePickerRoot.RangePicker
