@@ -18,18 +18,20 @@ const useFetchDataset = (): UseFetchDatasetReturn => {
 
   // !TODO: Invalidate cache if city is changed
   const [fetch, { data, loading, error }] = useLazyQuery<QueryProps>(clinicalDataQuery, {
+    variables: {
+      startDate: selectedDate.startDate,
+      endDate: selectedDate.endDate,
+    },
     fetchPolicy: 'cache-and-network',
     nextFetchPolicy: 'cache-first',
   });
 
   // fetch data when the component is mounted && when the date is changed
   useEffect(() => {
-    if (isMounted && selectedDate.startDate !== null && selectedDate.endDate !== null) {
+    if (isMounted && Boolean(selectedDate.startDate) && Boolean(selectedDate.endDate)) {
       void (async function () {
         await fetch({
           variables: {
-            startDate: selectedDate.startDate,
-            endDate: selectedDate.endDate,
             cityCode,
           },
         });

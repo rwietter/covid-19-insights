@@ -1,19 +1,19 @@
 import { create } from 'zustand';
 
 interface City {
-  city: string;
+  city: string | undefined;
   cityCode: string;
 }
 
 interface SelectedCityStore {
-  city: string;
+  city: string | undefined;
   cityCode: string;
   setSelectedCity: ({ city, cityCode }: City) => void;
-  getSelectedCity: () => { city: string; cityCode: string };
+  getSelectedCity: () => City;
 }
 
 const useSelectCityStore = create<SelectedCityStore>((set, get) => ({
-  city: '',
+  city: undefined,
   cityCode: '',
   setSelectedCity: ({ city, cityCode }) => {
     set({ city, cityCode });

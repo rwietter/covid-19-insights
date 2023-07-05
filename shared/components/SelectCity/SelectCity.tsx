@@ -1,7 +1,7 @@
 import { cities } from '@/services/graphql/query';
 import { useQuery } from '@apollo/client';
 import { Select } from 'antd';
-import { type ComponentProps, type FC } from 'react';
+import { useState, type ComponentProps, type FC } from 'react';
 import { useSelectCityStore } from '@/domains/dashboard/store';
 
 interface Props extends ComponentProps<typeof Select> {}
@@ -17,7 +17,7 @@ interface Data {
 
 const SelectCity: FC<Props> = (props) => {
   const { data, error } = useQuery<Data>(cities);
-  const { setSelectedCity } = useSelectCityStore();
+  const { setSelectedCity, city } = useSelectCityStore();
 
   const handleSelectCity = (value: unknown, label: string): void => {
     // eslint-disable-next-line no-extra-boolean-cast
@@ -40,8 +40,9 @@ const SelectCity: FC<Props> = (props) => {
       showSearch
       className='mr-3'
       style={{ width: 200 }}
-      placeholder='Pesquise uma cidade'
       optionFilterProp='children'
+      value={city}
+      placeholder='Pesquise uma cidade'
       onSelect={(value: string | unknown, { label }) => {
         handleSelectCity(value, label);
       }}
