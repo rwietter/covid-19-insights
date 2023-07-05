@@ -23,4 +23,8 @@ export interface QueryProps {
     count: number;
     year: number;
   }>;
+  countDeadPatientsGroupedByCity: Array<{
+    count: number;
+    name: string;
+  }>;
 }

@@ -59,10 +59,10 @@ export const clinicalDataQuery = gql`
     #   }
     # }
 
-    # countDeadPatientsGroupedByCity {
-    #   count
-    #   name
-    # }
+    countDeadPatientsGroupedByCity(filters: { startDate: $startDate, endDate: $endDate }) {
+      count
+      name
+    }
 
     countPatientsGroupedByMonth(
       filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
