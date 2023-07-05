@@ -5,3 +5,4 @@ export { DeadGroupedByMonth } from './DeadGroupedByMonth';
 export { ClinicalTests } from './ClinicalTests';
 export { PatientsGroupedByMonth } from './PatientsGroupedByMonth';
 export { DeadGroupedByCity } from './DeadGroupedByCity';
+export { PatientsAgeGroupedByMonth } from './PatientsAgeGroupedByMonth';

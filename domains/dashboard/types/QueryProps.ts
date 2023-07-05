@@ -27,4 +27,11 @@ export interface QueryProps {
     count: number;
     name: string;
   }>;
+  averageInfectedPatientAge: {
+    groupedByMonth: Array<{
+      avg: number;
+      month: number;
+      year: number;
+    }>;
+  };
 }

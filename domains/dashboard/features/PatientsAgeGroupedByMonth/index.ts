@@ -1,0 +1,1 @@
+export { PatientsAgeGroupedByMonth } from './PatientsAgeGroupedByMonth';

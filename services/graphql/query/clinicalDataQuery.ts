@@ -50,14 +50,13 @@ export const clinicalDataQuery = gql`
       avg
     }
 
-    # averageInfectedPatientAge {
-    #   avg
-    #   groupedByMonth {
-    #     month
-    #     year
-    #     avg
-    #   }
-    # }
+    averageInfectedPatientAge(filters: { startDate: $startDate, endDate: $endDate }) {
+      groupedByMonth {
+        month
+        year
+        avg
+      }
+    }
 
     countDeadPatientsGroupedByCity(filters: { startDate: $startDate, endDate: $endDate }) {
       count
