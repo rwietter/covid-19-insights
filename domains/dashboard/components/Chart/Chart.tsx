@@ -22,7 +22,10 @@ const Chart: FC<Props> = (props) => {
           <span>{props.subtitle}</span>
         </Tooltip>
       </p>
-      {props.children}
+      <div className='max-h-[500px]'>{props.children}</div>
+      <div>
+        <p className='text-slate-500 text-sm'>Fonte: saude.rs.gov</p>
+      </div>
     </div>
   );
 };

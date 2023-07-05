@@ -4,19 +4,37 @@ import { options, colors } from './options';
 import { Chart } from '@/domains/dashboard/components';
 import { type PatientsByDiagnosisCriteria } from '@/domains/dashboard/types';
 import { calculatePercentages } from '@/domains/dashboard/lib';
-import { data } from 'autoprefixer';
 
 interface ComponentProps {
   countPatientsByDiagnosisCriteria: PatientsByDiagnosisCriteria[];
 }
 
+type DataItem = PatientsByDiagnosisCriteria;
+
+const mergeDuplicatedObjects = (criterias: DataItem[]): DataItem[] => {
+  const mergedData = criterias.reduce((acc: Record<string, DataItem>, item) => {
+    const criteria = item.criteria.toLowerCase();
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+    if (acc[criteria]) {
+      acc[criteria].count += item.count;
+    } else {
+      acc[criteria] = { criteria: item.criteria, count: item.count };
+    }
+    return acc;
+  }, {});
+
+  return Object.values(mergedData);
+};
+
 const ClinicalTests: FC<ComponentProps> = ({ countPatientsByDiagnosisCriteria }) => {
   if (countPatientsByDiagnosisCriteria.length <= 0) return null;
 
-  const data = countPatientsByDiagnosisCriteria.map((item) => ({
+  const patientsByDiagnosisCriteria = countPatientsByDiagnosisCriteria.map((item) => ({
     criteria: item.criteria,
     count: item.count,
   }));
+
+  const data = mergeDuplicatedObjects(patientsByDiagnosisCriteria);
 
   const percentages = calculatePercentages(data.map(({ count }) => count));
 
