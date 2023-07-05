@@ -49,5 +49,27 @@ export const clinicalDataQuery = gql`
     ) {
       avg
     }
+
+    # averageInfectedPatientAge {
+    #   avg
+    #   groupedByMonth {
+    #     month
+    #     year
+    #     avg
+    #   }
+    # }
+
+    # countDeadPatientsGroupedByCity {
+    #   count
+    #   name
+    # }
+
+    countPatientsGroupedByMonth(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
+      count
+      month
+      year
+    }
   }
 `;

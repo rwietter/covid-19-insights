@@ -18,4 +18,9 @@ export interface QueryProps {
   averageDeadPatientAge: {
     avg: number;
   };
+  countPatientsGroupedByMonth: Array<{
+    month: number;
+    count: number;
+    year: number;
+  }>;
 }

@@ -7,37 +7,37 @@ import { options } from './options';
 const labels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
 
 interface Props {
-  deadGroupedByMonth: Array<{
+  patientsGroupedByMonth: Array<{
     month: number;
     count: number;
     year: number;
   }>;
 }
 
-const DeadGroupedByMonth: FC<Props> = ({ deadGroupedByMonth }): ReactElement | null => {
+const PatientsGroupedByMonth: FC<Props> = ({ patientsGroupedByMonth }): ReactElement | null => {
   // eslint-disable-next-line no-extra-boolean-cast
-  if (!Boolean(deadGroupedByMonth) || deadGroupedByMonth.length === 0) return null;
+  if (!Boolean(patientsGroupedByMonth) || patientsGroupedByMonth.length === 0) return null;
 
   const data = {
-    labels: deadGroupedByMonth.map((item) => `${labels[item.month - 1]}/${item.year}`),
+    labels: patientsGroupedByMonth.map((item) => `${labels[item.month - 1]}/${item.year}`),
     datasets: [
       {
         fill: true,
-        label: 'Óbitos por mês',
-        data: deadGroupedByMonth.map((item) => item.count),
-        borderColor: 'rgba(235, 111, 146, 0.8)',
-        backgroundColor: 'rgba(235, 111, 146, 0.2)',
+        label: 'Casos de infectados por mês',
+        data: patientsGroupedByMonth.map((item) => item.count),
+        borderColor: 'rgba(152, 146, 235, 0.8)',
+        backgroundColor: 'rgba(152, 146, 235, 0.2)',
       },
     ],
   };
 
-  const percentages = calculatePercentages(deadGroupedByMonth.map((item) => item.count));
+  const percentages = calculatePercentages(patientsGroupedByMonth.map((item) => item.count));
 
   return (
     <Chart
-      title='Óbitos por mês'
-      subtitle='Óbitos que ocorreram por mês'
-      description='O gráfico mostra o número de óbitos que ocorreram por mês. Você pode passar o mouse sobre os dados para ver o número de óbitos. Entre eles: Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro e Dezembro.'
+      title='Casos de infectados por mês'
+      subtitle='Infecções que ocorreram por mês'
+      description='O gráfico mostra o número de casos de infectados que ocorreram por mês. Você pode passar o mouse sobre os dados para ver o número de casos. Entre eles: Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro e Dezembro.'
     >
       <Line
         options={{
@@ -63,7 +63,7 @@ const DeadGroupedByMonth: FC<Props> = ({ deadGroupedByMonth }): ReactElement | n
                   const index = context.dataIndex;
                   const value = dataset.data[index] as number;
                   const percentage = percentages[index];
-                  return `Mortes em ${context.label}: ${value} (${percentage}%)`;
+                  return `Casos em ${context.label}: ${value} (${percentage}%)`;
                 },
               },
               titleFont: {
@@ -88,4 +88,4 @@ const DeadGroupedByMonth: FC<Props> = ({ deadGroupedByMonth }): ReactElement | n
   );
 };
 
-export { DeadGroupedByMonth };
+export { PatientsGroupedByMonth };

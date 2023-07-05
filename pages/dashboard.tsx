@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
   GetStaticPropsResult<PageProps>
 > => {
   try {
-    const { data, error } = await client.query({
+    const { data, error } = await client.query<QueryProps>({
       query: clinicalDataQuery,
       variables: {
         startDate: '2022-01-01T10:00:00Z',
@@ -44,6 +44,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
           countDeadPatients: data.countDeadPatients,
           countDeadPatientsGroupedByMonth: data.countDeadPatientsGroupedByMonth,
           averageDeadPatientAge: data.averageDeadPatientAge,
+          countPatientsGroupedByMonth: data.countPatientsGroupedByMonth,
         },
       },
       revalidate: 300, // 5 minutes

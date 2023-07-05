@@ -9,6 +9,7 @@ import {
   Symptoms,
   DeadGroupedByMonth,
   ClinicalTests,
+  PatientsGroupedByMonth,
 } from '@/domains/dashboard/features';
 
 import type { QueryProps } from '@/domains/dashboard/types';
@@ -63,6 +64,7 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
             countPatientsByDiagnosisCriteria={dataset?.countPatientsByDiagnosisCriteria}
           />
           <DeadGroupedByMonth deadGroupedByMonth={dataset?.countDeadPatientsGroupedByMonth} />
+          <PatientsGroupedByMonth patientsGroupedByMonth={dataset?.countPatientsGroupedByMonth} />
         </section>
       </main>
     </div>
