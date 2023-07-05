@@ -1,10 +1,12 @@
 import { gql } from '@apollo/client';
 
 export const clinicalDataQuery = gql`
-  query Symptoms($startDate: DateTime, $endDate: DateTime) {
-    countPatients(filters: { startDate: $startDate, endDate: $endDate })
+  query Symptoms($startDate: DateTime, $endDate: DateTime, $cityCode: String) {
+    countPatients(filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode })
 
-    countPatientsSymptoms(filters: { startDate: $startDate, endDate: $endDate }) {
+    countPatientsSymptoms(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
       febre
       garganta
       tosse
@@ -12,31 +14,39 @@ export const clinicalDataQuery = gql`
       outros
     }
 
-    countPatientsByAge(filters: { startDate: $startDate, endDate: $endDate }) {
+    countPatientsByAge(filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }) {
       age
       count
     }
 
-    countPatientsByRecoveryStatus(filters: { startDate: $startDate, endDate: $endDate }) {
+    countPatientsByRecoveryStatus(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
       status
       count
     }
 
-    countPatientsByDiagnosisCriteria(filters: { startDate: $startDate, endDate: $endDate }) {
+    countPatientsByDiagnosisCriteria(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
       criteria
       count
     }
 
-    countDeadPatients(filters: { startDate: $startDate, endDate: $endDate }) {
+    countDeadPatients(filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }) {
       count
     }
 
-    countDeadPatientsGroupedByMonth(filters: { startDate: $startDate, endDate: $endDate }) {
+    countDeadPatientsGroupedByMonth(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
       month
       year
       count
     }
-    averageDeadPatientAge(filters: { startDate: $startDate, endDate: $endDate }) {
+    averageDeadPatientAge(
+      filters: { startDate: $startDate, endDate: $endDate, cityCode: $cityCode }
+    ) {
       avg
     }
   }

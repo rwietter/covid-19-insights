@@ -11,8 +11,8 @@ interface SelectedDateStore {
 
 const useSlectedDateStore = create<SelectedDateStore>((set, get) => ({
   selectedDate: {
-    startDate: '2022-01-01T10:00:00Z',
-    endDate: '2022-12-31T10:00:00Z',
+    startDate: '',
+    endDate: '',
   },
   setSelectedDate: (startDate: string, endDate: string) => {
     set({ selectedDate: { startDate, endDate } });

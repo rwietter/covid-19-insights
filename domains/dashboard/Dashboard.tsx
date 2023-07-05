@@ -1,4 +1,4 @@
-import { type FC, type ReactNode } from 'react';
+import { memo, type FC, type ReactNode } from 'react';
 import { ApolloError } from '@apollo/client';
 import { useFetchDataset } from '@/domains/dashboard/hooks';
 
@@ -35,7 +35,10 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
     <div className='bg-primary overflow-hidden w-screen min-h-screen text-foreground font-sans'>
       <Header.Root>
         <Header.Icon />
-        <Header.DatePicker />
+        <div className='flex max-w-sm'>
+          <Header.City />
+          <Header.DatePicker />
+        </div>
       </Header.Root>
       <Sidebar />
       <main
@@ -65,4 +68,4 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
   );
 };
 
-export { Dashboard };
+export default memo(Dashboard);
