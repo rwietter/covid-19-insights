@@ -21,7 +21,7 @@ const Banner: FC<Props> = (props): ReactNode => {
       <section>
         <h1 className='text-3xl text-slate-500 font-sans'>
           Covid
-          <strong className='text-slate-800'>&nbsp;Insights</strong>.
+          <strong className='text-slate-800'>&nbsp;Insights (RS)</strong>.
         </h1>
         {hasDate ? (
           <p className='pt-2 block text-slate-500 font-semibold w-full max-w-fit'>

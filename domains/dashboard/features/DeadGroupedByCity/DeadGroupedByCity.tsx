@@ -35,7 +35,7 @@ const DeadGroupedByCity: FC<IDeadGroupedByCity> = ({ countDeadGroupedByCity }) =
 
   return (
     <Chart
-      title='Cidades com mais mortes'
+      title='Cidades com mais mortes (% absoluta)'
       subtitle='Cidades com mais mortes decorrentes do COVID-19'
       description='O gráfico mostra o número de óbitos que ocorreram por cidade no período filtrado. Você pode passar o mouse sobre os dados para ver o número de óbitos.'
     >
