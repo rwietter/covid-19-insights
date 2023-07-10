@@ -7,7 +7,7 @@ import { type ReactNode } from 'react';
 import { ApolloError } from '@apollo/client';
 
 interface PageProps {
-  data: QueryProps | undefined;
+  data: QueryProps | null;
 }
 
 export default function Page(props: PageProps): ReactNode {
@@ -22,14 +22,14 @@ export const getStaticProps: GetStaticProps = async (): Promise<
       query: clinicalDataQuery,
       variables: {
         startDate: '2022-01-01T10:00:00Z',
-        endDate: '2022-12-31T10:00:00Z',
+        endDate: '2022-02-05T10:00:00Z',
       },
     });
 
     if (error instanceof ApolloError) {
       return {
         props: {
-          data: undefined,
+          data: null,
         },
       };
     }
@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async (): Promise<
   } catch (error) {
     return {
       props: {
-        data: undefined,
+        data: null,
       },
     };
   }

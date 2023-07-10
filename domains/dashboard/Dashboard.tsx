@@ -19,15 +19,15 @@ import { Header, Sidebar } from '@/shared/components';
 import { useScreenshot } from '@/shared/hooks';
 
 interface Props {
-  clinicalData: QueryProps | undefined;
+  clinicalData: QueryProps | null;
 }
 
 const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
   const { loading, data, error } = useFetchDataset();
   const { getImage, screenshotRef } = useScreenshot();
 
-  if (typeof clinicalData === 'undefined' || error instanceof ApolloError) {
-    return <h1>Erro ao carregar dados</h1>;
+  if (clinicalData === null || error instanceof ApolloError) {
+    return <h1 className='text-slate-950'>Erro ao carregar dados</h1>;
   }
 
   if (loading) return <DashboardSkeleton />;
@@ -77,4 +77,4 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
   );
 };
 
-export default memo(Dashboard);
+export { Dashboard };
