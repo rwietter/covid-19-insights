@@ -47,7 +47,7 @@ Com a integração de um mapa, é possível identificar os pontos críticos da p
 - [Documentação](https://covid-19-insights.vercel.app/)
 - [Dashboard](http://200.132.38.218:3001/dashboard)
 - [Repositório Frontend](https://github.com/rwietter/covid-19-insights)
-- [Repositório Backend](github.com/DenianFossatti/covid-19-insights-graphql-api)
+- [Repositório Backend](https://github.com/DenianFossatti/covid-19-insights-graphql-api)
 - [Playground API](http://200.132.38.218:5001/graphql)
 - [Slides de Apresentação](https://docs.google.com/presentation/d/15Domn3W62eAEQyAP1zPEjHPQ6RUoDN6q08Vdm6jpQms/edit?usp=sharing)
 
