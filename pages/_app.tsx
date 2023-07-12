@@ -45,10 +45,10 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
     <>
       <Head>
         <title>Covid-19 Insights</title>
-        <meta name='title' content='Insightcore' />
+        <meta name='title' content='Covid Insights' />
         <meta
           name='description'
-          content='Insightcore ajuda você a ter uma visão completa da pandemia do COVID-19 no Brasil'
+          content='Covid Insights ajuda você a ter uma visão completa da pandemia do COVID-19 no Brasil'
         />
         <meta
           name='viewport'
@@ -60,7 +60,7 @@ const MyApp = ({ Component, pageProps }: AppProps): ReactNode => {
         <meta name='X-UA-Compatible' content='IE=edge' />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index, follow' />
-        <meta name='author' content='Insightcore' />
+        <meta name='author' content='Covid Insights' />
         <link rel='icon' href='/favicon.ico' type='image/x-icon' />
         <meta
           name='keywords'

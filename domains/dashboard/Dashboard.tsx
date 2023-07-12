@@ -22,7 +22,7 @@ interface Props {
   clinicalData: QueryProps | null;
 }
 
-const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
+const Dashboard = memo(function Dashboard({ clinicalData }: Props): ReactNode {
   const { loading, data, error } = useFetchDataset();
   const { getImage, screenshotRef } = useScreenshot();
 
@@ -75,6 +75,6 @@ const Dashboard: FC<Props> = ({ clinicalData }): ReactNode => {
       </main>
     </div>
   );
-};
+});
 
 export { Dashboard };

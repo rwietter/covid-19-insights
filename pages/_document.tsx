@@ -13,7 +13,6 @@ export default function Document(): ReactNode {
         />
         <link rel='preconnect' href='https://rsms.me/' />
         <link rel='stylesheet' href='https://rsms.me/inter/inter.css' />
-        <script src='particles.js'></script>
       </Head>
       <body>
         <Main />

@@ -1,7 +1,7 @@
 import { cities } from '@/services/graphql/query';
 import { useQuery } from '@apollo/client';
 import { Select } from 'antd';
-import { useState, type ComponentProps, type FC } from 'react';
+import { type ComponentProps, type FC } from 'react';
 import { useSelectCityStore } from '@/domains/dashboard/store';
 
 interface Props extends ComponentProps<typeof Select> {}
@@ -46,7 +46,7 @@ const SelectCity: FC<Props> = (props) => {
       onSelect={(value: string | unknown, { label }) => {
         handleSelectCity(value, label);
       }}
-      filterOption={(input, option) => (option?.label ?? '').includes(input)}
+      filterOption={(input, option) => (option?.label ?? '').toLowerCase().includes(input)}
       filterSort={(optionA, optionB) =>
         (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
       }
